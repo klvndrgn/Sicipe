@@ -1,6 +1,6 @@
 <p align="center"><a href="https://flutter.dev/" target="_blank"><img src="https://storage.googleapis.com/cms-storage-bucket/ec64036b4eacc9f3fd73.svg" width="400"></a></p>
 
-A new Flutter project for Mobile Development Subject. An mobile apps for selling & buying food recipes
+A new Flutter project for Mobile Development subject. A mobile apps for selling & buying food recipes
 
 Kelompok TryHard:
 - Eric
