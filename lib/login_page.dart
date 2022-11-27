@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sicipe/register_page.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -150,12 +151,20 @@ class _LoginScreenState extends State<LoginScreen> {
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 11),
                     ),
                     SizedBox(width: 5),
-                    Text(
-                      'Daftar Sekarang.',
-                      style: TextStyle(
-                          color: Colors.deepOrange,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 11),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RegisterPage()));
+                      },
+                      child: (Text(
+                        'Daftar Sekarang.',
+                        style: TextStyle(
+                            color: Colors.deepOrange,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 11),
+                      )),
                     ),
                     SizedBox(width: 15),
                     Text(
