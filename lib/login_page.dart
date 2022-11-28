@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sicipe/register_page.dart';
+import 'package:sicipe/home_page.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -128,7 +129,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         backgroundColor: Colors.deepOrange,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomeScreen()));
+                      },
                       child: Text(
                         'MASUK',
                         style: GoogleFonts.jost(
