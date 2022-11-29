@@ -27,20 +27,24 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Container(
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(25)),
-          child: TextField(
-            controller: _textEditingController,
-            decoration: InputDecoration(
-                border: InputBorder.none,
-                prefixIcon: Icon(Icons.search),
-                errorBorder: InputBorder.none,
-                enabledBorder: InputBorder.none,
-                focusedBorder: InputBorder.none,
-                contentPadding: EdgeInsets.all(15),
-                hintText: 'Cari Menu Resep atau Pemilik Resep',
-                hintStyle: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 12,
-                )),
+          child: SizedBox(
+            width: 340,
+            height: 40,
+            child: TextField(
+              controller: _textEditingController,
+              decoration: InputDecoration(
+                  border: InputBorder.none,
+                  prefixIcon: Icon(Icons.search),
+                  errorBorder: InputBorder.none,
+                  enabledBorder: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                  contentPadding: EdgeInsets.all(5),
+                  hintText: 'Cari Menu Resep atau Pemilik Resep',
+                  hintStyle: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 13,
+                  )),
+            ),
           ),
         ),
       ),
