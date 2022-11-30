@@ -23,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Image.asset('assets/App Logo.png'),
+                Image.asset('assets/icons/App Logo.png'),
                 Text(
                   'SICIPE',
                   style: GoogleFonts.jost(color: Colors.black, fontSize: 40),

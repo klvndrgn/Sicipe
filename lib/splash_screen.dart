@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('assets/App Logo.png'),
+                Image.asset('assets/icons/App Logo.png'),
                 Text(
                   'SICIPE',
                   style: GoogleFonts.jost(color: Colors.black, fontSize: 30),

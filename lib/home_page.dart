@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-// import 'package:google_fonts/google_fonts.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:sicipe/register_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -62,6 +63,20 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(width: 25),
+                Text(
+                  'Rekomendasi Resep',
+                  style: GoogleFonts.jost(
+                      color: Colors.black,
+                      fontSize: 25,
+                      fontWeight: FontWeight.w500),
+                ),
+              ],
+            ),
             CarouselSlider(
               options: CarouselOptions(
                 autoPlay: true,
@@ -139,9 +154,78 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
               }).toList(),
             ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(width: 25),
+                Text(
+                  'Kategori Resep',
+                  style: GoogleFonts.jost(
+                      color: Colors.black,
+                      fontSize: 25,
+                      fontWeight: FontWeight.w500),
+                ),
+                SizedBox(width: 70),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            // RegisterPage sesuaikan dengan class page Kategori Resep nanti
+                            builder: (context) => RegisterPage()));
+                  },
+                  child: (Text(
+                    'Tampilkan Semua',
+                    style: GoogleFonts.jost(
+                        color: Colors.deepOrange,
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500),
+                  )),
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ItemKategoriResep(
+                  title: 'Cemilan',
+                  icon: 'assets/icons/Cemilan.png',
+                ),
+                ItemKategoriResep(
+                  title: 'Daging',
+                  icon: 'assets/icons/Daging.png',
+                ),
+                ItemKategoriResep(
+                  title: 'Eropa',
+                  icon: 'assets/icons/Eropa.png',
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ItemKategoriResep(
+                  title: 'Hidangan Pembuka',
+                  icon: 'assets/icons/Hidangan Pembuka.png',
+                ),
+                ItemKategoriResep(
+                  title: 'Hidangan Sampingan',
+                  icon: 'assets/icons/Hidangan Sampingan.png',
+                ),
+                ItemKategoriResep(
+                  title: 'Indonesia',
+                  icon: 'assets/icons/Indonesia.png',
+                ),
+              ],
+            ),
           ],
         ),
       ),
+
+      // Navigation
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         selectedItemColor: Colors.deepOrange,
@@ -180,6 +264,39 @@ class _HomeScreenState extends State<HomeScreen> {
               label: 'Profile'),
         ],
       ),
+    );
+  }
+}
+
+class ItemKategoriResep extends StatelessWidget {
+  const ItemKategoriResep({
+    Key? key,
+    required this.title,
+    required this.icon,
+  }) : super(key: key);
+
+  final String title;
+  final String icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          width: 120,
+          height: 70,
+          child: Image.asset(
+            icon,
+          ),
+        ),
+        Text(title,
+            style: GoogleFonts.jost(
+                color: Colors.black,
+                fontSize: 15,
+                fontWeight: FontWeight.w500)),
+      ],
     );
   }
 }
