@@ -37,7 +37,7 @@ class _RegisterPageState extends State<RegisterPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(width: 10),
+              SizedBox(width: 20),
               Text('Nama Pengguna',
                   style: (GoogleFonts.jost(color: Colors.black, fontSize: 20))),
             ],
@@ -45,7 +45,7 @@ class _RegisterPageState extends State<RegisterPage> {
           SizedBox(height: 10),
           // username
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -72,7 +72,7 @@ class _RegisterPageState extends State<RegisterPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(width: 10),
+              SizedBox(width: 25),
               Text('Alamat Email',
                   style: (GoogleFonts.jost(color: Colors.black, fontSize: 20))),
             ],
@@ -80,7 +80,7 @@ class _RegisterPageState extends State<RegisterPage> {
           SizedBox(height: 10),
           // password
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -106,7 +106,7 @@ class _RegisterPageState extends State<RegisterPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(width: 10),
+              SizedBox(width: 25),
               Text('Tanggal Lahir',
                   style: (GoogleFonts.jost(color: Colors.black, fontSize: 20))),
             ],
@@ -114,7 +114,7 @@ class _RegisterPageState extends State<RegisterPage> {
           SizedBox(height: 10),
           // password
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -140,7 +140,7 @@ class _RegisterPageState extends State<RegisterPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(width: 10),
+              SizedBox(width: 25),
               Text('Kata Sandi',
                   style: (GoogleFonts.jost(color: Colors.black, fontSize: 20))),
             ],
@@ -148,7 +148,7 @@ class _RegisterPageState extends State<RegisterPage> {
           SizedBox(height: 10),
           // password
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -185,7 +185,7 @@ class _RegisterPageState extends State<RegisterPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(width: 10),
+              SizedBox(width: 25),
               Text('Konfirmasi Kata Sandi',
                   style: (GoogleFonts.jost(color: Colors.black, fontSize: 20))),
             ],
@@ -193,7 +193,7 @@ class _RegisterPageState extends State<RegisterPage> {
           SizedBox(height: 10),
           // password
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -226,7 +226,7 @@ class _RegisterPageState extends State<RegisterPage> {
           SizedBox(height: 25),
 
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(

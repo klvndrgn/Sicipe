@@ -187,7 +187,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             SizedBox(height: 20),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ItemKategoriResep(
                   title: 'Cemilan',
@@ -201,11 +201,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   title: 'Eropa',
                   icon: 'assets/icons/Eropa.png',
                 ),
+                ItemKategoriResep(
+                  title: 'Eropa',
+                  icon: 'assets/icons/Eropa.png',
+                ),
               ],
             ),
             SizedBox(height: 20),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ItemKategoriResep(
                   title: 'Hidangan Pembuka',
@@ -214,6 +218,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ItemKategoriResep(
                   title: 'Hidangan Sampingan',
                   icon: 'assets/icons/Hidangan Sampingan.png',
+                ),
+                ItemKategoriResep(
+                  title: 'Indonesia',
+                  icon: 'assets/icons/Indonesia.png',
                 ),
                 ItemKategoriResep(
                   title: 'Indonesia',
@@ -285,17 +293,23 @@ class ItemKategoriResep extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          width: 120,
-          height: 70,
+          width: 90,
+          height: 60,
           child: Image.asset(
             icon,
           ),
         ),
-        Text(title,
+        SizedBox(
+          width: 90,
+          child: Text(
+            title,
             style: GoogleFonts.jost(
-                color: Colors.black,
-                fontSize: 15,
-                fontWeight: FontWeight.w500)),
+                color: Colors.black, fontSize: 15, fontWeight: FontWeight.w500),
+            overflow: TextOverflow.ellipsis,
+            maxLines: 2,
+            textAlign: TextAlign.center,
+          ),
+        )
       ],
     );
   }
