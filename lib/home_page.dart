@@ -185,49 +185,58 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ItemKategoriResep(
-                  title: 'Cemilan',
-                  icon: 'assets/icons/Cemilan.png',
-                ),
-                ItemKategoriResep(
-                  title: 'Daging',
-                  icon: 'assets/icons/Daging.png',
-                ),
-                ItemKategoriResep(
-                  title: 'Eropa',
-                  icon: 'assets/icons/Eropa.png',
-                ),
-                ItemKategoriResep(
-                  title: 'Eropa',
-                  icon: 'assets/icons/Eropa.png',
-                ),
-              ],
-            ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ItemKategoriResep(
-                  title: 'Hidangan Pembuka',
-                  icon: 'assets/icons/Hidangan Pembuka.png',
-                ),
-                ItemKategoriResep(
-                  title: 'Hidangan Sampingan',
-                  icon: 'assets/icons/Hidangan Sampingan.png',
-                ),
-                ItemKategoriResep(
-                  title: 'Indonesia',
-                  icon: 'assets/icons/Indonesia.png',
-                ),
-                ItemKategoriResep(
-                  title: 'Indonesia',
-                  icon: 'assets/icons/Indonesia.png',
-                ),
-              ],
+            Container(
+              decoration: BoxDecoration(
+                  color: Colors.orange.shade100,
+                  borderRadius: BorderRadius.circular(15)),
+              child: Column(
+                children: [
+                  SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ItemKategoriResep(
+                        title: 'Cemilan',
+                        icon: 'assets/icons/Cemilan.png',
+                      ),
+                      ItemKategoriResep(
+                        title: 'Daging',
+                        icon: 'assets/icons/Daging.png',
+                      ),
+                      ItemKategoriResep(
+                        title: 'Eropa',
+                        icon: 'assets/icons/Eropa.png',
+                      ),
+                      ItemKategoriResep(
+                        title: 'Indonesia',
+                        icon: 'assets/icons/Indonesia.png',
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ItemKategoriResep(
+                        title: 'Hidangan Pembuka',
+                        icon: 'assets/icons/Hidangan Pembuka.png',
+                      ),
+                      ItemKategoriResep(
+                        title: 'Hidangan Sampingan',
+                        icon: 'assets/icons/Hidangan Sampingan.png',
+                      ),
+                      ItemKategoriResep(
+                        title: 'Hidangan Utama',
+                        icon: 'assets/icons/Hidangan Utama.png',
+                      ),
+                      ItemKategoriResep(
+                        title: 'Hidangan Penutup',
+                        icon: 'assets/icons/Jepang.png',
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),
@@ -294,7 +303,7 @@ class ItemKategoriResep extends StatelessWidget {
       children: [
         Container(
           width: 90,
-          height: 60,
+          height: 50,
           child: Image.asset(
             icon,
           ),
