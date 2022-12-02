@@ -56,22 +56,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   hintStyle: TextStyle(
                     color: Colors.grey,
                     fontSize: 13,
-                  )), 
-                 onTap: () {
-                  Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                  builder: (context) => SearchScreen()));
-              }, 
+                  )),
+              onTap: () {
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => SearchScreen()));
+              },
             ),
           ),
         ),
-                 actions: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.shopping_cart_outlined),
-                  ),
-                ],
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.shopping_cart_outlined),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
