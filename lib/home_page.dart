@@ -21,12 +21,32 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  final List<String> imgList = [
-    'https://asianfoodnetwork.com/content/dam/afn/global/en/recipes/ayam-penyet/AFN_ayam_penyet_main_image.jpg.transform/recipestep-img/img.jpg',
-    'https://asset.kompas.com/crops/yjf8riNAL8ig7m0uQa-vohWvLNI=/0x5:7360x4912/750x500/data/photo/2021/12/02/61a88dd7b8e1d.jpg',
-    'https://www.kitchensanctuary.com/wp-content/uploads/2020/07/Nasi-Goreng-square-FS-57.jpg',
-    'https://asset.kompas.com/crops/ngoU4gEYBvC42FH0QV-5--6SAgk=/3x0:700x465/780x390/data/photo/2021/01/06/5ff59a5dafb31.jpg',
-    'https://asset.kompas.com/crops/5u2ge0cWoJj0HOct3B1imjsjbLA=/0x244:800x777/780x390/data/photo/2021/05/23/60a9b166c6503.jpeg'
+  List<dynamic> _trendRecipe = [
+    {
+      'title': 'Ayam Penyet',
+      'image':
+          'https://asianfoodnetwork.com/content/dam/afn/global/en/recipes/ayam-penyet/AFN_ayam_penyet_main_image.jpg.transform/recipestep-img/img.jpg'
+    },
+    {
+      'title': 'Tom Yam',
+      'image':
+          'https://asset.kompas.com/crops/yjf8riNAL8ig7m0uQa-vohWvLNI=/0x5:7360x4912/750x500/data/photo/2021/12/02/61a88dd7b8e1d.jpg'
+    },
+    {
+      'title': 'Nasi Goreng',
+      'image':
+          'https://www.kitchensanctuary.com/wp-content/uploads/2020/07/Nasi-Goreng-square-FS-57.jpg'
+    },
+    {
+      'title': 'Risol Ayam',
+      'image':
+          'https://asset.kompas.com/crops/ngoU4gEYBvC42FH0QV-5--6SAgk=/3x0:700x465/780x390/data/photo/2021/01/06/5ff59a5dafb31.jpg'
+    },
+    {
+      'title': 'Martabak Manis',
+      'image':
+          'https://asset.kompas.com/crops/5u2ge0cWoJj0HOct3B1imjsjbLA=/0x244:800x777/780x390/data/photo/2021/05/23/60a9b166c6503.jpeg'
+    },
   ];
 
   TextEditingController? _textEditingController = TextEditingController();
@@ -101,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
                 enlargeCenterPage: true,
               ),
-              items: imgList
+              items: _trendRecipe
                   .map((item) => Container(
                         child: Container(
                           margin: EdgeInsets.all(5.0),
@@ -110,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   BorderRadius.all(Radius.circular(15.0)),
                               child: Stack(
                                 children: <Widget>[
-                                  Image.network(item,
+                                  Image.network(_trendRecipe[_current]['image'],
                                       fit: BoxFit.cover, width: 1000.0),
                                   Positioned(
                                     bottom: 0.0,
@@ -130,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       padding: EdgeInsets.symmetric(
                                           vertical: 10.0, horizontal: 20.0),
                                       child: Text(
-                                        'No. ${imgList.indexOf(item)} image',
+                                        item['title'],
                                         style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 20.0,
@@ -147,7 +167,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: imgList.asMap().entries.map((entry) {
+              children: _trendRecipe.asMap().entries.map((entry) {
                 return GestureDetector(
                   onTap: () => _controller.animateToPage(entry.key),
                   child: Container(
