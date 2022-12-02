@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sicipe/register_page.dart';
+import 'package:sicipe/search.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -55,10 +56,22 @@ class _HomeScreenState extends State<HomeScreen> {
                   hintStyle: TextStyle(
                     color: Colors.grey,
                     fontSize: 13,
-                  )),
+                  )), 
+                 onTap: () {
+                  Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                  builder: (context) => SearchScreen()));
+              }, 
             ),
           ),
         ),
+                 actions: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.shopping_cart_outlined),
+                  ),
+                ],
       ),
       body: SingleChildScrollView(
         child: Column(
