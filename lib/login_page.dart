@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sicipe/register_page.dart';
+import 'package:sicipe/forget_password.dart';
 import 'package:sicipe/home_page.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -173,10 +174,20 @@ class _LoginScreenState extends State<LoginScreen> {
                       )),
                     ),
                     SizedBox(width: 15),
-                    Text(
-                      'Lupa Kata Sandi?',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 11),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => forget_password()));
+                      },
+                      child: (Text(
+                        'Lupa Kata Sandi',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                            fontSize: 11),
+                      )),
                     ),
                   ],
                 )

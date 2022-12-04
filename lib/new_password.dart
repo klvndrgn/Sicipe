@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sicipe/login_page.dart';
+import 'package:sicipe/forget_password.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+class new_password extends StatefulWidget {
+  const new_password({super.key});
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<new_password> createState() => _new_passwordState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _new_passwordState extends State<new_password> {
   bool _obscureText = true;
   bool _obscureTexts = true;
   @override
@@ -25,13 +26,13 @@ class _RegisterPageState extends State<RegisterPage> {
             icon: Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()));
+                  MaterialPageRoute(builder: (context) => forget_password()));
             },
           )),
       body: SingleChildScrollView(
         child: Column(children: [
           Text(
-            'Daftar Akun',
+            'Isi Kata Sandi Baru',
             style: GoogleFonts.jost(
               fontWeight: FontWeight.bold,
               fontSize: 24,
@@ -39,114 +40,12 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
           SizedBox(height: 3),
           Text(
-            'Satu akun untuk menjelajahi resep makanan',
+            'Silahkan masukkan kata sandi baru anda',
             style: GoogleFonts.jost(
               fontSize: 15,
             ),
           ),
           SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              SizedBox(width: 20),
-              Text('Nama Pengguna',
-                  style: (GoogleFonts.jost(color: Colors.black, fontSize: 20))),
-            ],
-          ),
-          SizedBox(height: 10),
-          // username
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(color: Color.fromARGB(255, 143, 141, 141)),
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20.0),
-                child: TextField(
-                  keyboardType: TextInputType.name,
-                  textInputAction: TextInputAction.next,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hintText: 'Masukkan Nama Pengguna',
-                    hintStyle: TextStyle(
-                        color: Colors.grey, fontSize: 15, fontFamily: ''),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SizedBox(height: 25),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              SizedBox(width: 25),
-              Text('Alamat Email',
-                  style: (GoogleFonts.jost(color: Colors.black, fontSize: 20))),
-            ],
-          ),
-          SizedBox(height: 10),
-          // password
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(color: Color.fromARGB(255, 143, 141, 141)),
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20.0),
-                child: TextField(
-                  keyboardType: TextInputType.emailAddress,
-                  textInputAction: TextInputAction.next,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hintText: 'Masukkan Alamat Email',
-                    hintStyle: TextStyle(
-                        color: Colors.grey, fontSize: 15, fontFamily: ''),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SizedBox(height: 25),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              SizedBox(width: 25),
-              Text('Tanggal Lahir',
-                  style: (GoogleFonts.jost(color: Colors.black, fontSize: 20))),
-            ],
-          ),
-          SizedBox(height: 10),
-          // password
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(color: Color.fromARGB(255, 143, 141, 141)),
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20.0),
-                child: TextField(
-                  keyboardType: TextInputType.datetime,
-                  textInputAction: TextInputAction.next,
-                  decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Masukkan Tanggal Lahir',
-                      hintStyle: TextStyle(
-                          color: Colors.grey, fontSize: 15, fontFamily: ''),
-                      suffixIcon: Icon(Icons.calendar_month)),
-                ),
-              ),
-            ),
-          ),
-          SizedBox(height: 25),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -251,7 +150,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       MaterialPageRoute(builder: (context) => LoginScreen()));
                 },
                 child: Text(
-                  'DAFTAR',
+                  'UBAH KATA SANDI',
                   style: GoogleFonts.jost(
                       color: Colors.white,
                       fontSize: 20,
