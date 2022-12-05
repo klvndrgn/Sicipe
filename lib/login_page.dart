@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sicipe/register_page.dart';
 import 'package:sicipe/forget_password.dart';
 import 'package:sicipe/home_page.dart';
+import 'package:sicipe/profile_saya.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
