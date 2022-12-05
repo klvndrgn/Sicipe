@@ -27,11 +27,13 @@ class _profile_sayaState extends State<profile_saya> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.deepOrange,
-          title: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12.0),
-              child: Text('Profile Saya',
-                  style: GoogleFonts.jost(color: Colors.white, fontSize: 20)))),
+        title: Text(
+          'Profile Saya',
+          style: GoogleFonts.jost(
+              color: Colors.white, fontSize: 20, fontWeight: FontWeight.w500),
+        ),
+        backgroundColor: Colors.deepOrange,
+      ),
       body: SingleChildScrollView(
         child: Column(children: [
           SizedBox(height: 35),
