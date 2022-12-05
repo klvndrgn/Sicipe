@@ -20,7 +20,7 @@ class _buttom_navigationState extends State<buttom_navigation> {
   int _currentIndex = 0;
   final List<Widget> _children = [
     HomeScreen(),
-    feeds_page(),
+    FeedScreen(),
     transaksi(),
     profile_saya()
   ];
