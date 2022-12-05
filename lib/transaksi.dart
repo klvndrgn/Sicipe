@@ -4,14 +4,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sicipe/recipecategory_page.dart';
 import 'package:sicipe/search.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class transaksi extends StatefulWidget {
+  const transaksi({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<transaksi> createState() => _transaksiState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _transaksiState extends State<transaksi> {
   int _currentIndex = 0;
   int _current = 0;
 
@@ -230,8 +230,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         icon: 'assets/icons/Cemilan.png',
                       ),
                       ItemKategoriResep(
-                        title: 'Ayam',
-                        icon: 'assets/icons/Daging Ayam.png',
+                        title: 'Daging',
+                        icon: 'assets/icons/Daging.png',
                       ),
                       ItemKategoriResep(
                         title: 'Eropa',
@@ -261,7 +261,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       ItemKategoriResep(
                         title: 'Hidangan Penutup',
-                        icon: 'assets/icons/Hidangan Penutup.png',
+                        icon: 'assets/icons/Jepang.png',
                       ),
                     ],
                   ),

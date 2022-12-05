@@ -176,45 +176,6 @@ class _profile_sayaState extends State<profile_saya> {
       ),
 
       // Navigation
-
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        selectedItemColor: Colors.deepOrange,
-        onTap: _onItemTapped,
-        items: [
-          // Home
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-                color: Colors.deepOrange,
-              ),
-              label: 'Beranda'),
-
-          // Feeds
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.groups,
-                color: Colors.deepOrange,
-              ),
-              label: 'Feeds'),
-
-          // Transaksi
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.shopping_bag,
-                color: Colors.deepOrange,
-              ),
-              label: 'Transaksi'),
-
-          // Profile
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person,
-                color: Colors.deepOrange,
-              ),
-              label: 'Profile'),
-        ],
-      ),
     );
   }
 }
