@@ -230,8 +230,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         icon: 'assets/icons/Cemilan.png',
                       ),
                       ItemKategoriResep(
-                        title: 'Daging',
-                        icon: 'assets/icons/Daging.png',
+                        title: 'Ayam',
+                        icon: 'assets/icons/Daging Ayam.png',
                       ),
                       ItemKategoriResep(
                         title: 'Eropa',
@@ -261,7 +261,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       ItemKategoriResep(
                         title: 'Hidangan Penutup',
-                        icon: 'assets/icons/Jepang.png',
+                        icon: 'assets/icons/Hidangan Penutup.png',
                       ),
                     ],
                   ),

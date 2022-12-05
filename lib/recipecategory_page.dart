@@ -63,6 +63,30 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ItemKategoriResep(
+                    title: 'Thailand',
+                    icon: 'assets/icons/Thailand.png',
+                  ),
+                  ItemKategoriResep(
+                    title: 'India',
+                    icon: 'assets/icons/India.png',
+                  ),
+                  ItemKategoriResep(
+                    title: 'Vietnam',
+                    icon: 'assets/icons/Vietnam.png',
+                  ),
+                  ItemKategoriResep(
+                    title: 'Hongkong',
+                    icon: 'assets/icons/Hongkong.png',
+                  ),
+                ],
+              ),
+
+              // Baris 3
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ItemKategoriResep(
                     title: 'Hidangan Pembuka',
                     icon: 'assets/icons/Hidangan Pembuka.png',
                   ),
@@ -76,31 +100,7 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                   ),
                   ItemKategoriResep(
                     title: 'Hidangan Penutup',
-                    icon: 'assets/icons/Jepang.png',
-                  ),
-                ],
-              ),
-
-              // Baris 3
-              SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ItemKategoriResep(
-                    title: 'Cemilan',
-                    icon: 'assets/icons/Cemilan.png',
-                  ),
-                  ItemKategoriResep(
-                    title: 'Kue',
-                    icon: 'assets/icons/Kue-Kuean.png',
-                  ),
-                  ItemKategoriResep(
-                    title: 'Makanan Anak',
-                    icon: 'assets/icons/Makanan Anak.png',
-                  ),
-                  ItemKategoriResep(
-                    title: 'Minuman',
-                    icon: 'assets/icons/Minuman.png',
+                    icon: 'assets/icons/Hidangan Penutup.png',
                   ),
                 ],
               ),
@@ -111,6 +111,34 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ItemKategoriResep(
+                    title: 'Ayam',
+                    icon: 'assets/icons/Daging Ayam.png',
+                  ),
+                  ItemKategoriResep(
+                    title: 'Sapi',
+                    icon: 'assets/icons/Sapi.png',
+                  ),
+                  ItemKategoriResep(
+                    title: 'Seafood',
+                    icon: 'assets/icons/Seafood.png',
+                  ),
+                  ItemKategoriResep(
+                    title: 'Telur',
+                    icon: 'assets/icons/Telur.png',
+                  ),
+                ],
+              ),
+
+              // Baris 4
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ItemKategoriResep(
+                    title: 'Roti',
+                    icon: 'assets/icons/Roti.png',
+                  ),
+                  ItemKategoriResep(
                     title: 'Sarapan',
                     icon: 'assets/icons/Sarapan.png',
                   ),
@@ -119,12 +147,8 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                     icon: 'assets/icons/Saus.png',
                   ),
                   ItemKategoriResep(
-                    title: 'Sayur',
-                    icon: 'assets/icons/Sayur.png',
-                  ),
-                  ItemKategoriResep(
-                    title: 'Sup',
-                    icon: 'assets/icons/Sup.png',
+                    title: 'Mie',
+                    icon: 'assets/icons/Mie.png',
                   ),
                 ],
               ),
@@ -135,8 +159,8 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ItemKategoriResep(
-                    title: 'Thailand',
-                    icon: 'assets/icons/Thailand.png',
+                    title: 'Pedas',
+                    icon: 'assets/icons/Pedas.png',
                   ),
                   ItemKategoriResep(
                     title: 'Vegetarian',
@@ -149,6 +173,54 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                   ItemKategoriResep(
                     title: 'Sup',
                     icon: 'assets/icons/Sup.png',
+                  ),
+                ],
+              ),
+
+              // Baris 6
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ItemKategoriResep(
+                    title: 'Kue Basah',
+                    icon: 'assets/icons/Kue Basah.png',
+                  ),
+                  ItemKategoriResep(
+                    title: 'Kue Kering',
+                    icon: 'assets/icons/Kue Kering.png',
+                  ),
+                  ItemKategoriResep(
+                    title: 'Makanan Anak',
+                    icon: 'assets/icons/Makanan Anak.png',
+                  ),
+                  ItemKategoriResep(
+                    title: 'Makanan Diet',
+                    icon: 'assets/icons/Makanan Diet.png',
+                  ),
+                ],
+              ),
+
+              // Baris 7
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ItemKategoriResep(
+                    title: 'Manisan',
+                    icon: 'assets/icons/Manisan.png',
+                  ),
+                  ItemKategoriResep(
+                    title: 'Minuman',
+                    icon: 'assets/icons/Minuman.png',
+                  ),
+                  ItemKategoriResep(
+                    title: 'Pasta',
+                    icon: 'assets/icons/Pasta.png',
+                  ),
+                  ItemKategoriResep(
+                    title: 'Makanan Pesta',
+                    icon: 'assets/icons/Makanan Pesta.png',
                   ),
                 ],
               ),
