@@ -230,8 +230,8 @@ class _transaksiState extends State<transaksi> {
                         icon: 'assets/icons/Cemilan.png',
                       ),
                       ItemKategoriResep(
-                        title: 'Daging',
-                        icon: 'assets/icons/Daging.png',
+                        title: 'Ayam',
+                        icon: 'assets/icons/Daging Ayam.png',
                       ),
                       ItemKategoriResep(
                         title: 'Eropa',
