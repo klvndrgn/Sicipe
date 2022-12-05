@@ -158,7 +158,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 11),
                     ),
-                    SizedBox(width: 5),
                     TextButton(
                       onPressed: () {
                         Navigator.pushReplacement(
@@ -174,7 +173,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             fontSize: 11),
                       )),
                     ),
-                    SizedBox(width: 15),
+                    SizedBox(width: 2),
                     TextButton(
                       onPressed: () {
                         Navigator.pushReplacement(
@@ -183,10 +182,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                 builder: (context) => forget_password()));
                       },
                       child: (Text(
-                        'Lupa Kata Sandi',
+                        'Lupa Kata Sandi?',
                         style: TextStyle(
+                            color: Colors.deepOrange,
                             fontWeight: FontWeight.bold,
-                            color: Colors.black,
                             fontSize: 11),
                       )),
                     ),
