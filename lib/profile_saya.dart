@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sicipe/home_page.dart';
 import 'package:sicipe/login_page.dart';
-import 'package:sicipe/register_page.dart';
-import 'package:sicipe/search.dart';
 
 class profile_saya extends StatefulWidget {
   const profile_saya({super.key});
@@ -14,15 +10,6 @@ class profile_saya extends StatefulWidget {
 }
 
 class _profile_sayaState extends State<profile_saya> {
-  int _currentIndex = 0;
-  List _screens = [HomeScreen(), RegisterPage(), LoginScreen(), profile_saya()];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

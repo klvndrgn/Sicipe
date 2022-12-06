@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sicipe/buttom_navigation.dart';
+import 'package:sicipe/bottom_navigation.dart';
 import 'package:sicipe/register_page.dart';
 import 'package:sicipe/forget_password.dart';
-import 'package:sicipe/home_page.dart';
-import 'package:sicipe/profile_saya.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -136,7 +134,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => buttom_navigation()));
+                                builder: (context) => bottom_navigation()));
                       },
                       child: Text(
                         'MASUK',

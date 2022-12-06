@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sicipe/recipecategory_page.dart';
-import 'package:sicipe/search.dart';
 
 class transaksi extends StatefulWidget {
   const transaksi({super.key});

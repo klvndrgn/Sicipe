@@ -1,22 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:sicipe/feeds_page.dart';
 import 'package:sicipe/home_page.dart';
 import 'package:sicipe/profile_saya.dart';
-import 'package:sicipe/recipecategory_page.dart';
-import 'package:sicipe/register_page.dart';
-import 'package:sicipe/search.dart';
 import 'package:sicipe/transaksi.dart';
 
-class buttom_navigation extends StatefulWidget {
-  const buttom_navigation({super.key});
+class bottom_navigation extends StatefulWidget {
+  const bottom_navigation({super.key});
 
   @override
-  State<buttom_navigation> createState() => _buttom_navigationState();
+  State<bottom_navigation> createState() => _bottom_navigationState();
 }
 
-class _buttom_navigationState extends State<buttom_navigation> {
+class _bottom_navigationState extends State<bottom_navigation> {
   int _currentIndex = 0;
   final List<Widget> _children = [
     HomeScreen(),
