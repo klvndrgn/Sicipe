@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sicipe/detail_akun.dart';
 import 'package:sicipe/login_page.dart';
+import 'package:sicipe/tambah_resep.dart';
 
 class profile_saya extends StatefulWidget {
   const profile_saya({super.key});
@@ -14,44 +16,47 @@ class _profile_sayaState extends State<profile_saya> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Profile Saya',
-          style: GoogleFonts.jost(
-              color: Colors.white, fontSize: 20, fontWeight: FontWeight.w500),
-        ),
-        backgroundColor: Colors.deepOrange,
-      ),
+          backgroundColor: Colors.deepOrange,
+          title: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              child: Text('Profile Saya',
+                  style: GoogleFonts.jost(color: Colors.white, fontSize: 20)))),
       body: SingleChildScrollView(
         child: Column(children: [
           SizedBox(height: 35),
           Row(
             children: [
-              SizedBox(width: 26),
+              SizedBox(width: 28),
               Image.asset('assets/icons/profile-picture.png'),
               SizedBox(width: 29),
               Text('Kimberly',
                   style: (GoogleFonts.jost(color: Colors.black, fontSize: 18))),
               SizedBox(width: 165),
-              Icon(Icons.arrow_forward_ios,
-                  size: 19, color: Color.fromARGB(255, 207, 203, 203))
+              IconButton(
+                  icon: Icon(Icons.arrow_forward_ios,
+                      size: 21, color: Color.fromARGB(255, 207, 203, 203)),
+                  onPressed: () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => detail_akun()));
+                  }),
             ],
           ),
           SizedBox(height: 20),
-          Divider(color: Colors.grey, thickness: 0.5),
-          SizedBox(height: 8),
+          Divider(color: Colors.grey, thickness: 0.8),
+          SizedBox(height: 5),
           Row(
             children: [
               Column(
                 children: [
                   Row(
                     children: [
-                      SizedBox(width: 6),
+                      SizedBox(width: 8),
                       Text('Saldo Saya',
                           style: (GoogleFonts.jost(
                               color: Colors.black, fontSize: 16))),
                     ],
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 5),
                   Row(
                     children: [
                       SizedBox(width: 26),
@@ -79,7 +84,7 @@ class _profile_sayaState extends State<profile_saya> {
                       Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => LoginScreen()));
+                              builder: (context) => detail_akun()));
                     },
                     child: Text(
                       'Top Up',
@@ -91,7 +96,7 @@ class _profile_sayaState extends State<profile_saya> {
                   )
                 ],
               ),
-              SizedBox(width: 20),
+              SizedBox(width: 22),
               Column(
                 children: [
                   ElevatedButton(
@@ -106,7 +111,7 @@ class _profile_sayaState extends State<profile_saya> {
                       Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => LoginScreen()));
+                              builder: (context) => tambah_resep()));
                     },
                     child: Text(
                       'Tarik Saldo',
@@ -120,47 +125,62 @@ class _profile_sayaState extends State<profile_saya> {
               )
             ],
           ),
-          SizedBox(height: 8),
-          Divider(color: Colors.grey, thickness: 0.5),
-          SizedBox(height: 20),
+          SizedBox(height: 5),
+          Divider(color: Colors.grey, thickness: 0.2),
+          SizedBox(height: 5),
           Row(
             children: [
-              SizedBox(width: 26),
+              SizedBox(width: 28),
               Text('Resep Saya',
                   style: (GoogleFonts.jost(color: Colors.black, fontSize: 16))),
               SizedBox(width: 230),
-              Icon(Icons.arrow_forward_ios,
-                  size: 21, color: Color.fromARGB(255, 207, 203, 203))
+              IconButton(
+                  icon: Icon(Icons.arrow_forward_ios,
+                      size: 21, color: Color.fromARGB(255, 207, 203, 203)),
+                  onPressed: () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()));
+                  }),
             ],
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 5),
           Divider(color: Colors.grey, thickness: 0.5),
-          SizedBox(height: 20),
+          SizedBox(height: 5),
           Row(
             children: [
-              SizedBox(width: 26),
+              SizedBox(width: 28),
               Text('Feeds Saya',
                   style: (GoogleFonts.jost(color: Colors.black, fontSize: 16))),
               SizedBox(width: 230),
-              Icon(Icons.arrow_forward_ios,
-                  size: 21, color: Color.fromARGB(255, 207, 203, 203))
+              IconButton(
+                  icon: Icon(Icons.arrow_forward_ios,
+                      size: 21, color: Color.fromARGB(255, 207, 203, 203)),
+                  onPressed: () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()));
+                  }),
             ],
           ),
-          SizedBox(height: 20),
-          Divider(color: Colors.grey, thickness: 0.5),
-          SizedBox(height: 20),
+          SizedBox(height: 5),
+          Divider(color: Colors.grey, thickness: 0.9),
+          SizedBox(height: 5),
           Row(
             children: [
-              SizedBox(width: 26),
+              SizedBox(width: 28),
               Text('Keamanan Akun',
                   style: (GoogleFonts.jost(color: Colors.black, fontSize: 16))),
               SizedBox(width: 198),
-              Icon(Icons.arrow_forward_ios,
-                  size: 21, color: Color.fromARGB(255, 207, 203, 203))
+              IconButton(
+                  icon: Icon(Icons.arrow_forward_ios,
+                      size: 21, color: Color.fromARGB(255, 207, 203, 203)),
+                  onPressed: () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()));
+                  }),
             ],
           ),
-          SizedBox(height: 20),
-          Divider(color: Colors.grey, thickness: 0.5),
+          SizedBox(height: 5),
+          Divider(color: Colors.grey, thickness: 0.95),
         ]),
       ),
 
