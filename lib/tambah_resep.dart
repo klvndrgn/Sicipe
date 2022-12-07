@@ -25,8 +25,7 @@ class _tambah_resepState extends State<tambah_resep> {
               color: Colors.white,
               icon: Icon(Icons.arrow_back),
               onPressed: () {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => LoginScreen()));
+                Navigator.pop(context);
               },
             )),
         resizeToAvoidBottomInset: false,

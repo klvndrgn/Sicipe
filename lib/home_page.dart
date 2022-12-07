@@ -193,10 +193,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(width: 70),
                 TextButton(
                   onPressed: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => RecipeCategory()));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const RecipeCategory()),
+                    );
                   },
                   child: (Text(
                     'Tampilkan Semua',

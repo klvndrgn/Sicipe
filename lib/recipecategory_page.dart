@@ -27,8 +27,7 @@ class _RecipeCategoryState extends State<RecipeCategory> {
             padding: EdgeInsets.only(left: 0, right: 0, top: 0),
             icon: new Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => bottom_navigation()));
+              Navigator.pop(context);
             },
           ),
         ),

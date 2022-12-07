@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sicipe/bottom_navigation.dart';
 import 'package:sicipe/login_page.dart';
 import 'package:sicipe/profile_saya.dart';
 
@@ -13,6 +14,7 @@ class detail_akun extends StatefulWidget {
 class _detail_akunState extends State<detail_akun> {
   @override
   Widget build(BuildContext context) {
+    final Width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.deepOrange,
@@ -23,21 +25,19 @@ class _detail_akunState extends State<detail_akun> {
             color: Colors.white,
             icon: Icon(Icons.arrow_back),
             onPressed: () {
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => profile_saya()));
+              Navigator.pop(context);
             },
           )),
       body: SingleChildScrollView(
         child: Column(children: [
           SizedBox(height: 35),
-          Center(
-            child: Row(
-              children: [
-                SizedBox(width: 145),
-                Image.asset('assets/icons/gambar_tambah_resep.png'),
-                SizedBox(width: 29),
-              ],
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // SizedBox(width: Width / 2),
+              Image.asset('assets/icons/gambar_tambah_resep.png'),
+              // SizedBox(width: 29),
+            ],
           ),
           SizedBox(height: 9),
           Row(
@@ -54,35 +54,29 @@ class _detail_akunState extends State<detail_akun> {
           Divider(color: Colors.grey, thickness: 0.25),
           SizedBox(height: 15),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
+              Row(
                 children: [
-                  Row(
-                    children: [
-                      SizedBox(width: 20),
-                      Text('Nama Pengguna',
-                          style: (GoogleFonts.jost(
-                              color: Colors.black,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500))),
-                    ],
-                  ),
+                  SizedBox(width: 20),
+                  Text('Nama Pengguna',
+                      style: (GoogleFonts.jost(
+                          color: Colors.black,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500))),
                 ],
               ),
-              SizedBox(width: 215),
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      SizedBox(width: 20),
-                      Text('Kimberly',
-                          style: (GoogleFonts.jost(
-                              color: Colors.grey,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500))),
-                    ],
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(right: 20.0),
+                child: Row(
+                  children: [
+                    Text('Kimberly',
+                        style: (GoogleFonts.jost(
+                            color: Colors.grey,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500))),
+                  ],
+                ),
               ),
             ],
           ),

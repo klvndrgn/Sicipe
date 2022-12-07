@@ -36,8 +36,11 @@ class _profile_sayaState extends State<profile_saya> {
                   icon: Icon(Icons.arrow_forward_ios,
                       size: 21, color: Color.fromARGB(255, 207, 203, 203)),
                   onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => detail_akun()));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const detail_akun()),
+                    );
                   }),
             ],
           ),
@@ -81,10 +84,11 @@ class _profile_sayaState extends State<profile_saya> {
                       backgroundColor: Colors.deepOrange,
                     ),
                     onPressed: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => detail_akun()));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const detail_akun()),
+                      );
                     },
                     child: Text(
                       'Top Up',
@@ -108,10 +112,11 @@ class _profile_sayaState extends State<profile_saya> {
                       backgroundColor: Colors.deepOrange,
                     ),
                     onPressed: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => tambah_resep()));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const tambah_resep()),
+                      );
                     },
                     child: Text(
                       'Tarik Saldo',
