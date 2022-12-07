@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sicipe/home_page.dart';
+import 'package:sicipe/bottom_navigation.dart';
 
 class RecipeCategory extends StatefulWidget {
   const RecipeCategory({super.key});
@@ -27,7 +28,7 @@ class _RecipeCategoryState extends State<RecipeCategory> {
             icon: new Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {
               Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()));
+                  MaterialPageRoute(builder: (context) => bottom_navigation()));
             },
           ),
         ),
