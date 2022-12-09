@@ -24,19 +24,151 @@ class _FeedScreenState extends State<FeedScreen> {
         physics: AlwaysScrollableScrollPhysics(),
         children: <Widget>[
           SizedBox(height: 20),
-          Container(
-            width: double.infinity,
-            height: 320.0,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25),
-              color: Colors.red,
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+            child: Container(
+              width: double.infinity,
+              height: 400.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.black45,
+                      offset: Offset(0, 2),
+                      blurRadius: 8.0),
+                ],
+              ),
+              child: Column(children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10.0),
+                  child: Column(
+                    children: <Widget>[
+                      ListTile(
+                        leading: Container(
+                          margin: EdgeInsets.all(9.0),
+                          width: 40.0,
+                          height: 40.0,
+                          decoration:
+                              BoxDecoration(shape: BoxShape.circle, boxShadow: [
+                            BoxShadow(
+                              color: Colors.black45,
+                              offset: Offset(0, 2),
+                              blurRadius: 6.0,
+                            ),
+                          ]),
+                          child: CircleAvatar(
+                            child: ClipOval(
+                              child: Image(
+                                height: 40.0,
+                                width: 40.0,
+                                image: AssetImage(
+                                    'assets/icons/profile-picture.png'),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ),
+                        title: Text(
+                          'Kimberly',
+                          style: GoogleFonts.jost(
+                              color: Colors.black, fontSize: 14),
+                        ),
+                        subtitle: Text(
+                          '1 HOURS AGO',
+                          style: GoogleFonts.jost(
+                              color: Colors.grey.shade400, fontSize: 10),
+                        ),
+                        trailing: IconButton(
+                          color: Colors.deepOrange,
+                          icon: Icon(Icons.more_horiz),
+                          onPressed: () => print('More'),
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              margin: EdgeInsets.only(
+                                  left: 15, right: 15, bottom: 5),
+                              child: Text(
+                                'My favorite food is sushi you can wake me up for it at night 🥰🍣',
+                                style: GoogleFonts.jost(
+                                    color: Colors.black, fontSize: 14),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      Container(
+                        margin: EdgeInsets.zero,
+                        width: double.infinity,
+                        height: 200.0,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/sushi.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Row(
+                                children: [
+                                  IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(Icons.favorite_border))
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(Icons.comment_outlined))
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ]),
             ),
-            child: Column(children: <Widget>[
-              Padding(padding: EdgeInsets.symmetric(vertical: 10.0)),
-            ]),
           )
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        tooltip: 'Create Post',
+        backgroundColor: Colors.deepOrange,
+        child: Icon(Icons.add),
       ),
     );
   }
 }
+// Sample for Add Comment Input
+                // Padding(
+                //   // padding: EdgeInsets.all(10),
+                //   // padding: EdgeInsets.only(left: 40.0),
+                //   padding: EdgeInsets.symmetric(vertical: 50.0),
+                //   child: Container(
+                //     margin: EdgeInsets.only(left: 150, right: 150),
+                //     child: SizedBox(
+                //       width: 150,
+                //       height: 40,
+                //       child: TextField(
+                //         decoration: InputDecoration(
+                //             hintText: 'Add a comment...',
+                //             hintStyle: TextStyle(fontSize: 12.0),
+                //             border: OutlineInputBorder(
+                //                 borderRadius: BorderRadius.circular(20))),
+                //       ),
+                //     ),
+                //   ),
+                // ),

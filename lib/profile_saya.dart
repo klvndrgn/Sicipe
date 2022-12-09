@@ -20,7 +20,10 @@ class _profile_sayaState extends State<profile_saya> {
           title: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: Text('Profile Saya',
-                  style: GoogleFonts.jost(color: Colors.white, fontSize: 20)))),
+                  style: GoogleFonts.jost(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500)))),
       body: SingleChildScrollView(
         child: Column(children: [
           Padding(
