@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sicipe/bottom_navigation.dart';
 import 'package:sicipe/login_page.dart';
-import 'package:sicipe/profile_saya.dart';
 
 class detail_akun extends StatefulWidget {
   const detail_akun({super.key});
@@ -14,7 +12,6 @@ class detail_akun extends StatefulWidget {
 class _detail_akunState extends State<detail_akun> {
   @override
   Widget build(BuildContext context) {
-    final Width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.deepOrange,
@@ -30,163 +27,122 @@ class _detail_akunState extends State<detail_akun> {
           )),
       body: SingleChildScrollView(
         child: Column(children: [
-          SizedBox(height: 35),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // SizedBox(width: Width / 2),
-              Image.asset('assets/icons/gambar_tambah_resep.png'),
-              // SizedBox(width: 29),
-            ],
+          Padding(
+            padding: const EdgeInsets.only(top: 35.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // SizedBox(width: Width / 2),
+                Image.asset('assets/icons/profilepic.png'),
+                // SizedBox(width: 29),
+              ],
+            ),
           ),
-          SizedBox(height: 9),
-          Row(
-            children: [
-              SizedBox(width: 155),
-              Text('Ubah Foto Profil',
-                  style: (GoogleFonts.jost(
-                      color: Colors.grey,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500))),
-            ],
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 9.0,
+              bottom: 11,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Ubah Foto Profil',
+                    style: (GoogleFonts.jost(
+                        color: Colors.grey,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500))),
+              ],
+            ),
           ),
-          SizedBox(height: 11),
-          Divider(color: Colors.grey, thickness: 0.25),
-          SizedBox(height: 15),
+          Divider(color: Colors.grey, thickness: 0.4),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  SizedBox(width: 20),
-                  Text('Nama Pengguna',
-                      style: (GoogleFonts.jost(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500))),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0, top: 15, bottom: 15),
+                child: Text('Nama Pengguna',
+                    style: (GoogleFonts.jost(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500))),
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 20.0),
-                child: Row(
-                  children: [
-                    Text('Kimberly',
-                        style: (GoogleFonts.jost(
-                            color: Colors.grey,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500))),
-                  ],
-                ),
+                child: Text('Kimberly',
+                    style: (GoogleFonts.jost(
+                        color: Colors.grey,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500))),
               ),
             ],
           ),
-          SizedBox(height: 15),
           Divider(color: Colors.grey, thickness: 0.3),
-          SizedBox(height: 15),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      SizedBox(width: 20),
-                      Text('Tanggal Lahir',
-                          style: (GoogleFonts.jost(
-                              color: Colors.black,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500))),
-                    ],
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0, top: 15, bottom: 15),
+                child: Text('Tanggal Lahir',
+                    style: (GoogleFonts.jost(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500))),
               ),
-              SizedBox(width: 223),
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      Text('01 - 04 - 1995',
-                          style: (GoogleFonts.jost(
-                              color: Colors.grey,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500))),
-                    ],
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(right: 20.0),
+                child: Text('01 - 04 - 1995',
+                    style: (GoogleFonts.jost(
+                        color: Colors.grey,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500))),
               ),
             ],
           ),
-          SizedBox(height: 15),
           Divider(color: Colors.grey, thickness: 0.3),
-          SizedBox(height: 15),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      SizedBox(width: 20),
-                      Text('Alamat Email',
-                          style: (GoogleFonts.jost(
-                              color: Colors.black,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500))),
-                    ],
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0, top: 15, bottom: 15),
+                child: Text('Alamat Email',
+                    style: (GoogleFonts.jost(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500))),
               ),
-              SizedBox(width: 190),
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      Text('kimberly@gmail.com',
-                          style: (GoogleFonts.jost(
-                              color: Colors.grey,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500))),
-                    ],
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(right: 20.0),
+                child: Text('kimberly@gmail.com',
+                    style: (GoogleFonts.jost(
+                        color: Colors.grey,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500))),
               ),
             ],
           ),
-          SizedBox(height: 15),
-          Divider(color: Colors.grey, thickness: 0.4),
-          SizedBox(height: 15),
+          Divider(color: Colors.grey, thickness: 0.3),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      SizedBox(width: 20),
-                      Text('Nomor Rekening',
-                          style: (GoogleFonts.jost(
-                              color: Colors.black,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500))),
-                    ],
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0, top: 15, bottom: 15),
+                child: Text('Nomor Rekening',
+                    style: (GoogleFonts.jost(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500))),
               ),
-              SizedBox(width: 203),
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      Text('54426191317',
-                          style: (GoogleFonts.jost(
-                              color: Colors.grey,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500))),
-                    ],
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(right: 20.0),
+                child: Text('54426191317',
+                    style: (GoogleFonts.jost(
+                        color: Colors.grey,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500))),
               ),
             ],
           ),
-          SizedBox(height: 15),
-          Divider(color: Colors.grey, thickness: 0.2),
+          Divider(color: Colors.grey, thickness: 0.3),
           Row(
             children: [
               SizedBox(width: 20),
@@ -199,17 +155,31 @@ class _detail_akunState extends State<detail_akun> {
               IconButton(
                   icon: Icon(Icons.arrow_forward_ios,
                       size: 21, color: Color.fromARGB(255, 207, 203, 203)),
-                  onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => LoginScreen()));
-                  }),
+                  onPressed: () => MyAlertDialog())
             ],
           ),
-          Divider(color: Colors.grey, thickness: 0.3),
+          Divider(color: Colors.grey, thickness: 0.4),
         ]),
       ),
 
       // Navigation
+    );
+  }
+}
+
+class MyAlertDialog extends StatelessWidget {
+  final List<Widget> actions;
+
+  MyAlertDialog({
+    this.actions = const [],
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Text('No'),
+      actions: this.actions,
+      content: Text('Ok'),
     );
   }
 }

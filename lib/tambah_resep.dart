@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sicipe/bottom_navigation.dart';
-import 'package:sicipe/register_page.dart';
-import 'package:sicipe/forget_password.dart';
 import 'package:sicipe/login_page.dart';
 
 class tambah_resep extends StatefulWidget {
@@ -12,7 +9,6 @@ class tambah_resep extends StatefulWidget {
 }
 
 class _tambah_resepState extends State<tambah_resep> {
-  bool _obscureText = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,9 +27,8 @@ class _tambah_resepState extends State<tambah_resep> {
         resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+            padding: EdgeInsets.symmetric(vertical: 30),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Image.asset('assets/icons/gambar_tambah_resep.png'),
                 SizedBox(
@@ -46,23 +41,22 @@ class _tambah_resepState extends State<tambah_resep> {
                       fontSize: 14,
                       fontWeight: FontWeight.w500),
                 ),
-
                 // Username Field
-                SizedBox(height: 25),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 22),
-                    Text(
-                      'Kategori Makanan',
-                      style:
-                          GoogleFonts.jost(color: Colors.black, fontSize: 16),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  padding: const EdgeInsets.only(top: 25.0, left: 22),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Kategori Makanan',
+                        style:
+                            GoogleFonts.jost(color: Colors.black, fontSize: 16),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(top: 10.0, left: 20, right: 20),
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -84,21 +78,27 @@ class _tambah_resepState extends State<tambah_resep> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 22),
-                    Text(
-                      'Jumlah Kalori (Kal)',
-                      style:
-                          GoogleFonts.jost(color: Colors.black, fontSize: 16),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10),
+
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  padding: const EdgeInsets.only(
+                    top: 10.0,
+                    left: 22,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Jumlah Kalori (Kal)',
+                        style:
+                            GoogleFonts.jost(color: Colors.black, fontSize: 16),
+                      ),
+                    ],
+                  ),
+                ),
+
+                Padding(
+                  padding:
+                      const EdgeInsets.only(left: 20.0, right: 20, top: 10),
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -120,21 +120,27 @@ class _tambah_resepState extends State<tambah_resep> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 22),
-                    Text(
-                      'Durasi Masak (Menit))',
-                      style:
-                          GoogleFonts.jost(color: Colors.black, fontSize: 16),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10),
+
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  padding: const EdgeInsets.only(
+                    top: 10.0,
+                    left: 22,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Durasi Masak (Menit))',
+                        style:
+                            GoogleFonts.jost(color: Colors.black, fontSize: 16),
+                      ),
+                    ],
+                  ),
+                ),
+
+                Padding(
+                  padding:
+                      const EdgeInsets.only(left: 20.0, right: 20, top: 10),
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -156,21 +162,27 @@ class _tambah_resepState extends State<tambah_resep> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 22),
-                    Text(
-                      'Deskripsi Makanan',
-                      style:
-                          GoogleFonts.jost(color: Colors.black, fontSize: 16),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10),
+
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  padding: const EdgeInsets.only(
+                    top: 10.0,
+                    left: 22,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Deskripsi Makanan',
+                        style:
+                            GoogleFonts.jost(color: Colors.black, fontSize: 16),
+                      ),
+                    ],
+                  ),
+                ),
+
+                Padding(
+                  padding:
+                      const EdgeInsets.only(left: 20.0, right: 20, top: 10),
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -181,6 +193,8 @@ class _tambah_resepState extends State<tambah_resep> {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 20.0),
                       child: TextField(
+                        keyboardType: TextInputType.multiline,
+                        maxLines: 4,
                         decoration: InputDecoration(
                             border: InputBorder.none,
                             hintText: 'Kurang dari 25 kata',
@@ -192,21 +206,27 @@ class _tambah_resepState extends State<tambah_resep> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 22),
-                    Text(
-                      'Bahan',
-                      style:
-                          GoogleFonts.jost(color: Colors.black, fontSize: 16),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10),
+
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  padding: const EdgeInsets.only(
+                    top: 10.0,
+                    left: 22,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Bahan',
+                        style:
+                            GoogleFonts.jost(color: Colors.black, fontSize: 16),
+                      ),
+                    ],
+                  ),
+                ),
+
+                Padding(
+                  padding:
+                      const EdgeInsets.only(left: 20.0, right: 20, top: 10),
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -217,6 +237,8 @@ class _tambah_resepState extends State<tambah_resep> {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 20.0),
                       child: TextField(
+                        keyboardType: TextInputType.multiline,
+                        maxLines: 4,
                         decoration: InputDecoration(
                             border: InputBorder.none,
                             hintText: 'Ditulis dengan urutan bullet',
@@ -228,21 +250,27 @@ class _tambah_resepState extends State<tambah_resep> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 22),
-                    Text(
-                      'Alat',
-                      style:
-                          GoogleFonts.jost(color: Colors.black, fontSize: 16),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10),
+
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  padding: const EdgeInsets.only(
+                    top: 10.0,
+                    left: 22,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Alat',
+                        style:
+                            GoogleFonts.jost(color: Colors.black, fontSize: 16),
+                      ),
+                    ],
+                  ),
+                ),
+
+                Padding(
+                  padding:
+                      const EdgeInsets.only(left: 20.0, right: 20, top: 10),
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -253,6 +281,8 @@ class _tambah_resepState extends State<tambah_resep> {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 20.0),
                       child: TextField(
+                        keyboardType: TextInputType.multiline,
+                        maxLines: 4,
                         decoration: InputDecoration(
                             border: InputBorder.none,
                             hintText: 'Ditulis dengan urutan bullet',
@@ -264,21 +294,27 @@ class _tambah_resepState extends State<tambah_resep> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 22),
-                    Text(
-                      'Langkah - Langkah',
-                      style:
-                          GoogleFonts.jost(color: Colors.black, fontSize: 16),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10),
+
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  padding: const EdgeInsets.only(
+                    top: 10.0,
+                    left: 22,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Langkah - Langkah',
+                        style:
+                            GoogleFonts.jost(color: Colors.black, fontSize: 16),
+                      ),
+                    ],
+                  ),
+                ),
+
+                Padding(
+                  padding:
+                      const EdgeInsets.only(left: 20.0, right: 20, top: 10),
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -289,6 +325,8 @@ class _tambah_resepState extends State<tambah_resep> {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 20.0),
                       child: TextField(
+                        keyboardType: TextInputType.multiline,
+                        maxLines: 8,
                         decoration: InputDecoration(
                             border: InputBorder.none,
                             hintText: 'Ditulis dengan urutan bullet',
@@ -304,9 +342,9 @@ class _tambah_resepState extends State<tambah_resep> {
                 // Password Field
 
                 // Button Masuk
-                SizedBox(height: 10),
+
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  padding: const EdgeInsets.only(top: 20, left: 15, right: 15),
                   child: Container(
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(

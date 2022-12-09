@@ -23,26 +23,28 @@ class _profile_sayaState extends State<profile_saya> {
                   style: GoogleFonts.jost(color: Colors.white, fontSize: 20)))),
       body: SingleChildScrollView(
         child: Column(children: [
-          SizedBox(height: 35),
-          Row(
-            children: [
-              SizedBox(width: 28),
-              Image.asset('assets/icons/profile-picture.png'),
-              SizedBox(width: 29),
-              Text('Kimberly',
-                  style: (GoogleFonts.jost(color: Colors.black, fontSize: 18))),
-              SizedBox(width: 165),
-              IconButton(
-                  icon: Icon(Icons.arrow_forward_ios,
-                      size: 21, color: Color.fromARGB(255, 207, 203, 203)),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const detail_akun()),
-                    );
-                  }),
-            ],
+          Padding(
+            padding: const EdgeInsets.only(left: 28, top: 35),
+            child: Row(
+              children: [
+                Image.asset('assets/icons/profile-picture.png'),
+                SizedBox(width: 29),
+                Text('Kimberly',
+                    style:
+                        (GoogleFonts.jost(color: Colors.black, fontSize: 18))),
+                SizedBox(width: 165),
+                IconButton(
+                    icon: Icon(Icons.arrow_forward_ios,
+                        size: 21, color: Color.fromARGB(255, 207, 203, 203)),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const detail_akun()),
+                      );
+                    }),
+              ],
+            ),
           ),
           SizedBox(height: 20),
           Divider(color: Colors.grey, thickness: 0.8),
@@ -130,15 +132,55 @@ class _profile_sayaState extends State<profile_saya> {
               )
             ],
           ),
+          Divider(color: Colors.grey, thickness: 0.8),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 5, bottom: 5, left: 28),
+                child: Text('Resep Saya',
+                    style:
+                        (GoogleFonts.jost(color: Colors.black, fontSize: 16))),
+              ),
+              IconButton(
+                  icon: Icon(Icons.arrow_forward_ios,
+                      size: 21, color: Color.fromARGB(255, 207, 203, 203)),
+                  onPressed: () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()));
+                  }),
+            ],
+          ),
+          Divider(color: Colors.grey, thickness: 0.8),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 5, bottom: 5, left: 28),
+                child: Text('Feeds Saya',
+                    style:
+                        (GoogleFonts.jost(color: Colors.black, fontSize: 16))),
+              ),
+              IconButton(
+                  icon: Icon(Icons.arrow_forward_ios,
+                      size: 21, color: Color.fromARGB(255, 207, 203, 203)),
+                  onPressed: () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()));
+                  }),
+            ],
+          ),
           SizedBox(height: 5),
           Divider(color: Colors.grey, thickness: 0.2),
-          SizedBox(height: 5),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(width: 28),
-              Text('Resep Saya',
-                  style: (GoogleFonts.jost(color: Colors.black, fontSize: 16))),
-              SizedBox(width: 230),
+              Padding(
+                padding: const EdgeInsets.only(top: 5, bottom: 5, left: 28),
+                child: Text('Keamanan Akun',
+                    style:
+                        (GoogleFonts.jost(color: Colors.black, fontSize: 16))),
+              ),
               IconButton(
                   icon: Icon(Icons.arrow_forward_ios,
                       size: 21, color: Color.fromARGB(255, 207, 203, 203)),
@@ -148,44 +190,7 @@ class _profile_sayaState extends State<profile_saya> {
                   }),
             ],
           ),
-          SizedBox(height: 5),
-          Divider(color: Colors.grey, thickness: 0.5),
-          SizedBox(height: 5),
-          Row(
-            children: [
-              SizedBox(width: 28),
-              Text('Feeds Saya',
-                  style: (GoogleFonts.jost(color: Colors.black, fontSize: 16))),
-              SizedBox(width: 230),
-              IconButton(
-                  icon: Icon(Icons.arrow_forward_ios,
-                      size: 21, color: Color.fromARGB(255, 207, 203, 203)),
-                  onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => LoginScreen()));
-                  }),
-            ],
-          ),
-          SizedBox(height: 5),
-          Divider(color: Colors.grey, thickness: 0.9),
-          SizedBox(height: 5),
-          Row(
-            children: [
-              SizedBox(width: 28),
-              Text('Keamanan Akun',
-                  style: (GoogleFonts.jost(color: Colors.black, fontSize: 16))),
-              SizedBox(width: 198),
-              IconButton(
-                  icon: Icon(Icons.arrow_forward_ios,
-                      size: 21, color: Color.fromARGB(255, 207, 203, 203)),
-                  onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => LoginScreen()));
-                  }),
-            ],
-          ),
-          SizedBox(height: 5),
-          Divider(color: Colors.grey, thickness: 0.95),
+          Divider(color: Colors.grey, thickness: 0.3),
         ]),
       ),
 

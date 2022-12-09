@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sicipe/home_page.dart';
-import 'package:sicipe/bottom_navigation.dart';
 
 class RecipeCategory extends StatefulWidget {
   const RecipeCategory({super.key});
