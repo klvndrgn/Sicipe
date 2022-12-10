@@ -71,8 +71,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontSize: 13,
                   )),
               onTap: () {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => SearchScreen()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SearchScreen()),
+                );
               },
             ),
           ),

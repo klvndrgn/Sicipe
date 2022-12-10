@@ -28,8 +28,7 @@ class _SearchScreenState extends State<SearchScreen> {
           padding: EdgeInsets.only(left: 0, right: 0, top: 0),
           icon: new Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            Navigator.pushReplacement(
-                context, MaterialPageRoute(builder: (context) => HomeScreen()));
+            Navigator.pop(context);
           },
         ),
         title: Container(
