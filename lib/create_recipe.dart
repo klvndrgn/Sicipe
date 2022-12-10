@@ -15,7 +15,10 @@ class _tambah_resepState extends State<tambah_resep> {
         appBar: AppBar(
             backgroundColor: Colors.deepOrange,
             title: Text('Penambahan Resep',
-                style: GoogleFonts.jost(color: Colors.white, fontSize: 20)),
+                style: GoogleFonts.jost(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500)),
             automaticallyImplyLeading: true,
             leading: IconButton(
               color: Colors.white,

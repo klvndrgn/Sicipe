@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sicipe/create_post.dart';
 
 class FeedScreen extends StatefulWidget {
   const FeedScreen({super.key});
@@ -264,7 +265,12 @@ class _FeedScreenState extends State<FeedScreen> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const CreatePostScreen()),
+          );
+        },
         tooltip: 'Create Post',
         backgroundColor: Colors.deepOrange,
         child: Icon(Icons.add),

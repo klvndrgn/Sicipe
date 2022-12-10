@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sicipe/detail_akun.dart';
 import 'package:sicipe/login_page.dart';
-import 'package:sicipe/tambah_resep.dart';
+import 'package:sicipe/create_recipe.dart';
 
 class profile_saya extends StatefulWidget {
   const profile_saya({super.key});
