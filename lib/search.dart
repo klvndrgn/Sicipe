@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sicipe/model/search_model.dart';
 import 'package:sicipe/home_page.dart';
+import 'package:sicipe/recipes_detail.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -150,10 +151,10 @@ class _SearchScreenState extends State<SearchScreen> {
                               backgroundColor: Colors.deepOrange,
                             ),
                             onPressed: () {
-                              // Navigator.pushReplacement(
-                              //     context,
-                              //     MaterialPageRoute(
-                              //         builder: (context) => HomeScreen()));
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => RecipesDetailScreen()));
                             },
                             child: Text(
                               'Detail',
