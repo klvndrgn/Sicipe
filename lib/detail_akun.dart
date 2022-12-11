@@ -155,7 +155,71 @@ class _detail_akunState extends State<detail_akun> {
               IconButton(
                   icon: Icon(Icons.arrow_forward_ios,
                       size: 21, color: Color.fromARGB(255, 207, 203, 203)),
-                  onPressed: () => MyAlertDialog())
+                  onPressed: () => {
+                        showDialog(
+                            context: context,
+                            builder: (ctx) => AlertDialog(
+                                    title: Text('Konfirmasi Keluar',
+                                        style: (GoogleFonts.jost(
+                                            color: Colors.deepOrange,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w500))),
+                                    content: Text(
+                                        "Anda ingin keluar dari akun ini?",
+                                        style:
+                                            (GoogleFonts.jost(fontSize: 14))),
+                                    actions: <Widget>[
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          Container(
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                minimumSize: Size(113, 37),
+                                                backgroundColor: Colors.grey,
+                                              ),
+                                              onPressed: () {
+                                                Navigator.of(ctx).pop();
+                                              },
+                                              child: Text(
+                                                'Tidak',
+                                                style: GoogleFonts.jost(
+                                                    color: Colors.white,
+                                                    fontSize: 16,
+                                                    fontWeight:
+                                                        FontWeight.w500),
+                                              ),
+                                            ),
+                                          ),
+                                          Container(
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                minimumSize: Size(113, 37),
+                                                backgroundColor:
+                                                    Colors.deepOrange,
+                                              ),
+                                              onPressed: () {
+                                                Navigator.pushReplacement(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            LoginScreen()));
+                                              },
+                                              child: Text(
+                                                'Iya',
+                                                style: GoogleFonts.jost(
+                                                    color: Colors.white,
+                                                    fontSize: 16,
+                                                    fontWeight:
+                                                        FontWeight.w500),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ]))
+                      })
             ],
           ),
           Divider(color: Colors.grey, thickness: 0.4),
@@ -163,23 +227,6 @@ class _detail_akunState extends State<detail_akun> {
       ),
 
       // Navigation
-    );
-  }
-}
-
-class MyAlertDialog extends StatelessWidget {
-  final List<Widget> actions;
-
-  MyAlertDialog({
-    this.actions = const [],
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return AlertDialog(
-      title: Text('No'),
-      actions: this.actions,
-      content: Text('Ok'),
     );
   }
 }

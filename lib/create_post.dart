@@ -14,7 +14,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
     return Scaffold(
         appBar: AppBar(
             backgroundColor: Colors.deepOrange,
-            title: Text('Penambahan Resep',
+            title: Text('Buat Postingan',
                 style: GoogleFonts.jost(
                     color: Colors.white,
                     fontSize: 20,
