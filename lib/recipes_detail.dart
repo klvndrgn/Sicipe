@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sicipe/model/search_model.dart';
-import 'package:sicipe/home_page.dart';
 import 'package:sicipe/purchased_recipes_detail.dart';
 
 class RecipesDetailScreen extends StatefulWidget {
@@ -37,8 +36,7 @@ class _RecipesDetailScreen extends State<RecipesDetailScreen> {
           padding: EdgeInsets.only(left: 0, right: 0, top: 0),
           icon: new Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            Navigator.pushReplacement(
-                context, MaterialPageRoute(builder: (context) => HomeScreen()));
+            Navigator.pop(context);
           },
         ),
         title: Container(
