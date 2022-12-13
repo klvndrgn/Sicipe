@@ -16,7 +16,10 @@ class _detail_akunState extends State<detail_akun> {
       appBar: AppBar(
           backgroundColor: Colors.deepOrange,
           title: Text('Detail Akun',
-              style: GoogleFonts.jost(color: Colors.white, fontSize: 20)),
+              style: GoogleFonts.jost(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500)),
           automaticallyImplyLeading: true,
           leading: IconButton(
             color: Colors.white,
