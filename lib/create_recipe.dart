@@ -364,7 +364,7 @@ class _tambah_resepState extends State<tambah_resep> {
                                 builder: (context) => LoginScreen()));
                       },
                       child: Text(
-                        'MASUK',
+                        'Konfirmasi',
                         style: GoogleFonts.jost(
                             color: Colors.white,
                             fontSize: 20,
