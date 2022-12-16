@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sicipe/ganti_nomor_rekening.dart';
 import 'package:sicipe/resep_saya.dart';
 import 'package:sicipe/change_password.dart';
 
@@ -72,7 +73,7 @@ class _keamanan_akunState extends State<keamanan_akun> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const resep_saya()),
+                          builder: (context) => const ganti_nomor_rekeningScreen()),
                     );
                   }),
             ],
