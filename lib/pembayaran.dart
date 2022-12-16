@@ -125,7 +125,7 @@ class _pembayaranState extends State<pembayaran> {
                           ),
                             SizedBox(height: 10),
                           Container(
-                            width: 120.0,
+                            width: 110.0,
                             alignment: Alignment.bottomLeft,
                             child: Text(
                               'Rp 100.000',
@@ -151,7 +151,7 @@ class _pembayaranState extends State<pembayaran> {
                           ),
                             SizedBox(height: 10),
                           Container(
-                            width: 120.0,
+                            width: 110.0,
                             alignment: Alignment.bottomLeft,
                             child: Text(
                               'Rp 300.000',
@@ -161,7 +161,7 @@ class _pembayaranState extends State<pembayaran> {
                           )
                         ],
                       )),
-                       SizedBox(height: 240),
+                       SizedBox(height: 262),
                          Container(
                           child: Column(
                         children: [
@@ -208,6 +208,7 @@ class _pembayaranState extends State<pembayaran> {
                         borderRadius: BorderRadius.circular(5),
                       ),
                       backgroundColor: Colors.deepOrange,
+                      
                     ),
                     onPressed: () {
                       Navigator.push(
