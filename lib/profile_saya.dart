@@ -6,6 +6,7 @@ import 'package:sicipe/create_recipe.dart';
 import 'package:sicipe/resep_saya.dart';
 import 'package:sicipe/keamanan_akun.dart';
 import 'package:sicipe/payment.dart';
+import 'package:sicipe/withdrawal.dart';
 
 class profile_saya extends StatefulWidget {
   const profile_saya({super.key});
@@ -123,7 +124,7 @@ class _profile_sayaState extends State<profile_saya> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const tambah_resep()),
+                            builder: (context) => const WithdrawScreen()),
                       );
                     },
                     child: Text(
