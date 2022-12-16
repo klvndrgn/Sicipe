@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sicipe/detail_akun.dart';
+import 'package:sicipe/pembayaran.dart';
 
 class BelumBayar extends StatefulWidget {
   const BelumBayar({super.key});
@@ -94,7 +95,7 @@ class _BelumBayarState extends State<BelumBayar> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const detail_akun()),
+                            builder: (context) => const pembayaran()),
                       );
                     },
                     child: Text(
@@ -189,7 +190,7 @@ class _BelumBayarState extends State<BelumBayar> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const detail_akun()),
+                            builder: (context) => const pembayaran()),
                       );
                     },
                     child: Text(
