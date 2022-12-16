@@ -149,10 +149,7 @@ class _ganti_nomor_rekeningState extends State<ganti_nomor_rekeningScreen> {
                         backgroundColor: Colors.deepOrange,
                       ),
                       onPressed: () {
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => profile_saya()));
+                                  Navigator.pop(context);
                       },
                       child: Text(
                         'Konfirmasi',
