@@ -41,7 +41,6 @@ class _SearchScreenState extends State<SearchScreen> {
                 height: 35,
                 child: TextField(
                   focusNode: searchNode,
-                  autofocus: true,
                   onEditingComplete: (() => searchNode.requestFocus()),
                   controller: _textEditingController,
                   decoration: InputDecoration(
@@ -69,26 +68,27 @@ class _SearchScreenState extends State<SearchScreen> {
         ],
       ),
       body: Column(children: <Widget>[
-        SizedBox(height: 10),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Hasil Pencarian',
-              style: GoogleFonts.jost(
-                  color: Colors.black,
-                  fontSize: 21,
-                  fontWeight: FontWeight.w500),
-            ),
-            SizedBox(width: 120),
-            Text(
-              '5 Resep ditemukan',
-              style: TextStyle(
-                  color: Colors.grey[600],
-                  fontWeight: FontWeight.w500,
-                  fontSize: 13),
-            ),
-          ],
+        Padding(
+          padding: const EdgeInsets.only(left: 20.0, right: 20, top: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Hasil Pencarian',
+                style: GoogleFonts.jost(
+                    color: Colors.black,
+                    fontSize: 21,
+                    fontWeight: FontWeight.w500),
+              ),
+              Text(
+                '5 Resep ditemukan',
+                style: TextStyle(
+                    color: Colors.grey[600],
+                    fontWeight: FontWeight.w500,
+                    fontSize: 13),
+              ),
+            ],
+          ),
         ),
         Expanded(
           child: ListView.builder(
@@ -97,39 +97,38 @@ class _SearchScreenState extends State<SearchScreen> {
               final search = searchs[index];
               return Column(
                 children: [
-                  SizedBox(height: 10),
-                  Container(
-                    padding: EdgeInsets.only(left: 20, right: 20, top: 30),
-                    width: 380,
-                    height: 180,
-                    decoration: BoxDecoration(
-                        // color: Colors.orange[50],
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(left: 20.0, right: 20, top: 10),
+                    child: Container(
+                      height: 180,
+                      decoration: BoxDecoration(
+                          // color: Colors.orange[50],
 
-                        border: Border.all(color: Colors.black, width: 2),
-                        borderRadius: BorderRadius.circular(15.0),
-                        image: DecorationImage(
-                            image: AssetImage(search.search_url),
-                            fit: BoxFit.cover)),
+                          border: Border.all(color: Colors.black, width: 2),
+                          borderRadius: BorderRadius.circular(15.0),
+                          image: DecorationImage(
+                              image: AssetImage(search.search_url),
+                              fit: BoxFit.cover)),
+                    ),
                   ),
-                  SizedBox(height: 10),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
                           child: Column(
                         children: [
-                          Container(
-                            width: 250.0,
-                            alignment: Alignment.bottomLeft,
-                            child: Text(
-                              search.search_title,
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 19),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20.0, top: 10),
+                            child: Container(
+                              child: Text(
+                                search.search_title,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 19),
+                              ),
                             ),
                           ),
                           Container(
-                            width: 250.0,
-                            alignment: Alignment.bottomLeft,
                             child: Text(
                               search.release_by,
                               style: TextStyle(
@@ -139,7 +138,7 @@ class _SearchScreenState extends State<SearchScreen> {
                         ],
                       )),
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        padding: const EdgeInsets.only(right: 20.0),
                         child: Container(
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(

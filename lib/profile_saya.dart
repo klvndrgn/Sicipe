@@ -4,6 +4,7 @@ import 'package:sicipe/detail_akun.dart';
 import 'package:sicipe/login_page.dart';
 import 'package:sicipe/create_recipe.dart';
 import 'package:sicipe/resep_saya.dart';
+import 'package:sicipe/keamanan_akun.dart';
 
 class profile_saya extends StatefulWidget {
   const profile_saya({super.key});
@@ -192,8 +193,11 @@ class _profile_sayaState extends State<profile_saya> {
                   icon: Icon(Icons.arrow_forward_ios,
                       size: 21, color: Color.fromARGB(255, 207, 203, 203)),
                   onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => LoginScreen()));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const keamanan_akun()),
+                    );
                   }),
             ],
           ),

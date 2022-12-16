@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sicipe/model/search_model.dart';
-import 'package:sicipe/home_page.dart';
 
 class PurchasedRecipesDetailScreen extends StatefulWidget {
   const PurchasedRecipesDetailScreen({super.key});
@@ -38,8 +37,7 @@ class _PurchasedRecipesDetailScreen
           padding: EdgeInsets.only(left: 0, right: 0, top: 0),
           icon: new Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            Navigator.pushReplacement(
-                context, MaterialPageRoute(builder: (context) => HomeScreen()));
+            Navigator.pop(context);
           },
         ),
         title: Container(
@@ -52,7 +50,6 @@ class _PurchasedRecipesDetailScreen
                 height: 35,
                 child: TextField(
                   focusNode: searchNode,
-                  autofocus: true,
                   onEditingComplete: (() => searchNode.requestFocus()),
                   controller: _textEditingController,
                   decoration: InputDecoration(
