@@ -52,7 +52,7 @@ class _profile_sayaState extends State<profile_saya> {
             ),
           ),
           SizedBox(height: 20),
-          Divider(color: Colors.grey, thickness: 0.8),
+          Divider(color: Colors.grey, thickness: 0.3),
           SizedBox(height: 5),
           Row(
             children: [
@@ -137,7 +137,7 @@ class _profile_sayaState extends State<profile_saya> {
               )
             ],
           ),
-          Divider(color: Colors.grey, thickness: 0.8),
+          Divider(color: Colors.grey, thickness: 0.3),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -159,7 +159,7 @@ class _profile_sayaState extends State<profile_saya> {
                   }),
             ],
           ),
-          Divider(color: Colors.grey, thickness: 0.8),
+          Divider(color: Colors.grey, thickness: 0.3),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -179,7 +179,7 @@ class _profile_sayaState extends State<profile_saya> {
             ],
           ),
           SizedBox(height: 5),
-          Divider(color: Colors.grey, thickness: 0.2),
+          Divider(color: Colors.grey, thickness: 0.3),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
