@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sicipe/profile_saya.dart';
+import 'package:sicipe/bottom_navigation.dart';
+import 'package:sicipe/home_page.dart';
 
 class change_password_confirm extends StatefulWidget {
   const change_password_confirm({super.key});
@@ -120,6 +121,8 @@ class _change_password_confirmState extends State<change_password_confirm> {
                   decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Masukkan Ulang Kata Sandi',
+                      hintStyle: TextStyle(
+                          color: Colors.grey, fontSize: 15, fontFamily: ''),
                       suffixIcon: GestureDetector(
                         onTap: () {
                           setState(() {
@@ -147,8 +150,12 @@ class _change_password_confirmState extends State<change_password_confirm> {
                   backgroundColor: Colors.deepOrange,
                 ),
                 onPressed: () {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => profile_saya()));
+                  Navigator.pushAndRemoveUntil(context,
+                      MaterialPageRoute(builder: (BuildContext context) {
+                    return bottom_navigation();
+                  }), (r) {
+                    return false;
+                  });
                 },
                 child: Text(
                   'Konfirmasi',

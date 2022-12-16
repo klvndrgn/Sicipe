@@ -103,10 +103,11 @@ class _change_passwordState extends State<change_password> {
                   backgroundColor: Colors.deepOrange,
                 ),
                 onPressed: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => change_password_confirm()));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const change_password_confirm()),
+                  );
                 },
                 child: Text(
                   'Konfirmasi',
