@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sicipe/bottom_navigation.dart';
-import 'package:sicipe/detail_akun.dart';
-import 'package:sicipe/profile_saya.dart';
-import 'package:sicipe/register_page.dart';
-// <<<<<<< Updated upstream
-import 'package:sicipe/forget_password.dart';
-// =======
-import 'package:sicipe/home_page.dart';
+
 // import 'package:sicipe/search.dart';
 // >>>>>>> Stashed changes
 
 class ganti_nomor_rekeningScreen extends StatefulWidget {
   const ganti_nomor_rekeningScreen({super.key});
   @override
-  State<ganti_nomor_rekeningScreen> createState() => _ganti_nomor_rekeningState();
+  State<ganti_nomor_rekeningScreen> createState() =>
+      _ganti_nomor_rekeningState();
 }
 
 class _ganti_nomor_rekeningState extends State<ganti_nomor_rekeningScreen> {
@@ -149,7 +143,7 @@ class _ganti_nomor_rekeningState extends State<ganti_nomor_rekeningScreen> {
                         backgroundColor: Colors.deepOrange,
                       ),
                       onPressed: () {
-                                  Navigator.pop(context);
+                        Navigator.pop(context);
                       },
                       child: Text(
                         'Konfirmasi',

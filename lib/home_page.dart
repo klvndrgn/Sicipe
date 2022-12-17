@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sicipe/recipecategory_page.dart';
 import 'package:sicipe/search.dart';
 import 'package:sicipe/transaksi.dart';
+import 'package:sicipe/category_detail.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -229,19 +230,55 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       ItemKategoriResep(
                         title: 'Cemilan',
-                        icon: 'assets/icons/Cemilan.png',
+                        icon: IconButton(
+                            icon: Image.asset('assets/icons/Cemilan.png'),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const category_detail()),
+                              );
+                            }),
                       ),
                       ItemKategoriResep(
                         title: 'Ayam',
-                        icon: 'assets/icons/Daging Ayam.png',
+                        icon: IconButton(
+                            icon: Image.asset('assets/icons/Daging Ayam.png'),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const category_detail()),
+                              );
+                            }),
                       ),
                       ItemKategoriResep(
                         title: 'Eropa',
-                        icon: 'assets/icons/Eropa.png',
+                        icon: IconButton(
+                            icon: Image.asset('assets/icons/Eropa.png'),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const category_detail()),
+                              );
+                            }),
                       ),
                       ItemKategoriResep(
                         title: 'Indonesia',
-                        icon: 'assets/icons/Indonesia.png',
+                        icon: IconButton(
+                            icon: Image.asset('assets/icons/Indonesia.png'),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const category_detail()),
+                              );
+                            }),
                       ),
                     ],
                   ),
@@ -251,19 +288,59 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       ItemKategoriResep(
                         title: 'Hidangan Pembuka',
-                        icon: 'assets/icons/Hidangan Pembuka.png',
+                        icon: IconButton(
+                            icon: Image.asset(
+                                'assets/icons/Hidangan Pembuka.png'),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const category_detail()),
+                              );
+                            }),
                       ),
                       ItemKategoriResep(
                         title: 'Hidangan Sampingan',
-                        icon: 'assets/icons/Hidangan Sampingan.png',
+                        icon: IconButton(
+                            icon: Image.asset(
+                                'assets/icons/Hidangan Sampingan.png'),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const category_detail()),
+                              );
+                            }),
                       ),
                       ItemKategoriResep(
                         title: 'Hidangan Utama',
-                        icon: 'assets/icons/Hidangan Utama.png',
+                        icon: IconButton(
+                            icon:
+                                Image.asset('assets/icons/Hidangan Utama.png'),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const category_detail()),
+                              );
+                            }),
                       ),
                       ItemKategoriResep(
                         title: 'Hidangan Penutup',
-                        icon: 'assets/icons/Hidangan Penutup.png',
+                        icon: IconButton(
+                            icon: Image.asset(
+                                'assets/icons/Hidangan Penutup.png'),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const category_detail()),
+                              );
+                            }),
                       ),
                     ],
                   ),
@@ -285,7 +362,7 @@ class ItemKategoriResep extends StatelessWidget {
   }) : super(key: key);
 
   final String title;
-  final String icon;
+  final Widget icon;
 
   @override
   Widget build(BuildContext context) {
@@ -296,9 +373,7 @@ class ItemKategoriResep extends StatelessWidget {
         Container(
           width: 90,
           height: 50,
-          child: Image.asset(
-            icon,
-          ),
+          child: icon,
         ),
         SizedBox(
           width: 90,

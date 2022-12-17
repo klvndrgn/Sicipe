@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sicipe/detail_akun.dart';
 import 'package:sicipe/purchased_recipes_detail.dart';
 
 class SudahBayar extends StatefulWidget {
@@ -85,7 +84,8 @@ class _SudahBayarState extends State<SudahBayar> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const PurchasedRecipesDetailScreen()),
+                            builder: (context) =>
+                                const PurchasedRecipesDetailScreen()),
                       );
                     },
                     child: Text(

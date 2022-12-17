@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:sicipe/create_recipe.dart';
-import 'package:sicipe/detail_akun.dart';
+
 import 'package:sicipe/purchased_recipes_detail.dart';
 
 class resep_saya extends StatefulWidget {

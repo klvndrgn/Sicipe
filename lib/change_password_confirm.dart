@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sicipe/bottom_navigation.dart';
-import 'package:sicipe/home_page.dart';
 
 class change_password_confirm extends StatefulWidget {
   const change_password_confirm({super.key});

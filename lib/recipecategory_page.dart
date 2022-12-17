@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sicipe/category_detail.dart';
 
 class RecipeCategory extends StatefulWidget {
   const RecipeCategory({super.key});
@@ -38,19 +39,51 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                 children: [
                   ItemKategoriResep(
                     title: 'Korea',
-                    icon: 'assets/icons/Korea.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Korea.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Jepang',
-                    icon: 'assets/icons/Jepang.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Jepang.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Eropa',
-                    icon: 'assets/icons/Eropa.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Eropa.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Indonesia',
-                    icon: 'assets/icons/Indonesia.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Indonesia.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                 ],
               ),
@@ -62,19 +95,51 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                 children: [
                   ItemKategoriResep(
                     title: 'Thailand',
-                    icon: 'assets/icons/Thailand.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Thailand.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'India',
-                    icon: 'assets/icons/India.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/India.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Vietnam',
-                    icon: 'assets/icons/Vietnam.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Hongkong.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Hongkong',
-                    icon: 'assets/icons/Hongkong.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Hongkong.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                 ],
               ),
@@ -86,19 +151,52 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                 children: [
                   ItemKategoriResep(
                     title: 'Hidangan Pembuka',
-                    icon: 'assets/icons/Hidangan Pembuka.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Hidangan Pembuka.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Hidangan Sampingan',
-                    icon: 'assets/icons/Hidangan Sampingan.png',
+                    icon: IconButton(
+                        icon:
+                            Image.asset('assets/icons/Hidangan Sampingan.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Hidangan Utama',
-                    icon: 'assets/icons/Hidangan Utama.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Hidangan Utama.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Hidangan Penutup',
-                    icon: 'assets/icons/Hidangan Penutup.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Hidangan Penutup.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                 ],
               ),
@@ -110,19 +208,51 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                 children: [
                   ItemKategoriResep(
                     title: 'Ayam',
-                    icon: 'assets/icons/Daging Ayam.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Daging Ayam.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Sapi',
-                    icon: 'assets/icons/Sapi.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Sapi.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Seafood',
-                    icon: 'assets/icons/Seafood.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Seafood.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Telur',
-                    icon: 'assets/icons/Telur.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Telur.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                 ],
               ),
@@ -134,19 +264,51 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                 children: [
                   ItemKategoriResep(
                     title: 'Roti',
-                    icon: 'assets/icons/Roti.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Roti.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Sarapan',
-                    icon: 'assets/icons/Sarapan.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Sarapan.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Saus',
-                    icon: 'assets/icons/Saus.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Saus.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Mie',
-                    icon: 'assets/icons/Mie.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Mie.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                 ],
               ),
@@ -158,19 +320,51 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                 children: [
                   ItemKategoriResep(
                     title: 'Pedas',
-                    icon: 'assets/icons/Pedas.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Pedas.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Vegetarian',
-                    icon: 'assets/icons/Vegetarian.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Vegetarian.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Sayur',
-                    icon: 'assets/icons/Sayur.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Sayur.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Sup',
-                    icon: 'assets/icons/Sup.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Sup.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                 ],
               ),
@@ -182,19 +376,51 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                 children: [
                   ItemKategoriResep(
                     title: 'Kue Basah',
-                    icon: 'assets/icons/Kue Basah.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Kue Basah.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Kue Kering',
-                    icon: 'assets/icons/Kue Kering.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Kue Kering.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Makanan Anak',
-                    icon: 'assets/icons/Makanan Anak.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Makanan Anak.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Makanan Diet',
-                    icon: 'assets/icons/Makanan Diet.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Makanan Diet.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                 ],
               ),
@@ -206,20 +432,52 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                 children: [
                   ItemKategoriResep(
                     title: 'Manisan',
-                    icon: 'assets/icons/Manisan.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Manisan.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Minuman',
-                    icon: 'assets/icons/Minuman.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Minuman.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
                     title: 'Pasta',
-                    icon: 'assets/icons/Pasta.png',
+                    icon: IconButton(
+                        icon: Image.asset('assets/icons/Pasta.png'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const category_detail()),
+                          );
+                        }),
                   ),
                   ItemKategoriResep(
-                    title: 'Makanan Pesta',
-                    icon: 'assets/icons/Makanan Pesta.png',
-                  ),
+                      title: 'Makanan Pesta',
+                      icon: IconButton(
+                          icon: Image.asset('assets/icons/Makanan Pesta.png'),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const category_detail()),
+                            );
+                          })),
                 ],
               ),
             ],
@@ -236,7 +494,7 @@ class ItemKategoriResep extends StatelessWidget {
   }) : super(key: key);
 
   final String title;
-  final String icon;
+  final Widget icon;
 
   @override
   Widget build(BuildContext context) {
@@ -247,9 +505,7 @@ class ItemKategoriResep extends StatelessWidget {
         Container(
           width: 90,
           height: 50,
-          child: Image.asset(
-            icon,
-          ),
+          child: icon,
         ),
         SizedBox(
           width: 90,
