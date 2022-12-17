@@ -49,7 +49,6 @@ class _RecipesDetailScreen extends State<RecipesDetailScreen> {
                 height: 35,
                 child: TextField(
                   focusNode: searchNode,
-                  autofocus: true,
                   onEditingComplete: (() => searchNode.requestFocus()),
                   controller: _textEditingController,
                   decoration: InputDecoration(

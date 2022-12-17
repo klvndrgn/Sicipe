@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sicipe/ganti_nomor_rekening.dart';
+import 'package:sicipe/purchased_recipes_detail.dart';
 
 class pembayaran extends StatefulWidget {
   const pembayaran({super.key});
@@ -122,7 +123,7 @@ class _pembayaranState extends State<pembayaran> {
                     ),
                     SizedBox(height: 10),
                     Container(
-                      width: 120.0,
+                      width: 100.0,
                       alignment: Alignment.bottomLeft,
                       child: Text(
                         'Rp 100.000',
@@ -146,7 +147,7 @@ class _pembayaranState extends State<pembayaran> {
                     ),
                     SizedBox(height: 10),
                     Container(
-                      width: 120.0,
+                      width: 100.0,
                       alignment: Alignment.bottomLeft,
                       child: Text(
                         'Rp 300.000',
@@ -207,7 +208,7 @@ class _pembayaranState extends State<pembayaran> {
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
-                                  const ganti_nomor_rekeningScreen()),
+                                  const PurchasedRecipesDetailScreen()),
                         );
                       },
                       child: Text(

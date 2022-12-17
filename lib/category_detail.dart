@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sicipe/model/search_model.dart';
-import 'package:sicipe/purchased_recipes_detail.dart';
+import 'package:sicipe/recipes_detail.dart';
 
 class category_detail extends StatefulWidget {
   const category_detail({super.key});
@@ -172,7 +172,7 @@ class _category_detailState extends State<category_detail> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      const PurchasedRecipesDetailScreen()),
+                                      const RecipesDetailScreen()),
                             );
                           },
                           child: Text(
@@ -284,7 +284,7 @@ class _category_detailState extends State<category_detail> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      const PurchasedRecipesDetailScreen()),
+                                      const RecipesDetailScreen()),
                             );
                           },
                           child: Text(
@@ -396,7 +396,7 @@ class _category_detailState extends State<category_detail> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      const PurchasedRecipesDetailScreen()),
+                                      const RecipesDetailScreen()),
                             );
                           },
                           child: Text(
@@ -508,7 +508,7 @@ class _category_detailState extends State<category_detail> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      const PurchasedRecipesDetailScreen()),
+                                      const RecipesDetailScreen()),
                             );
                           },
                           child: Text(

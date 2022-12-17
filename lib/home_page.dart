@@ -224,7 +224,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   borderRadius: BorderRadius.circular(15)),
               child: Column(
                 children: [
-                  SizedBox(height: 20),
+                  SizedBox(height: 15),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -282,7 +282,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -377,13 +376,18 @@ class ItemKategoriResep extends StatelessWidget {
         ),
         SizedBox(
           width: 90,
-          child: Text(
-            title,
-            style: GoogleFonts.jost(
-                color: Colors.black, fontSize: 15, fontWeight: FontWeight.w500),
-            overflow: TextOverflow.ellipsis,
-            maxLines: 2,
-            textAlign: TextAlign.center,
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 15.0),
+            child: Text(
+              title,
+              style: GoogleFonts.jost(
+                  color: Colors.black,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500),
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
+              textAlign: TextAlign.center,
+            ),
           ),
         )
       ],
