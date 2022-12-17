@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sicipe/detail_akun.dart';
-import 'package:sicipe/login_page.dart';
-
+import 'package:sicipe/feeds_saya.dart';
 import 'package:sicipe/resep_saya.dart';
 import 'package:sicipe/keamanan_akun.dart';
 import 'package:sicipe/payment.dart';
@@ -175,8 +174,10 @@ class _profile_sayaState extends State<profile_saya> {
                   icon: Icon(Icons.arrow_forward_ios,
                       size: 21, color: Color.fromARGB(255, 207, 203, 203)),
                   onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => LoginScreen()));
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const FeedsSayaScreen()));
                   }),
             ],
           ),
