@@ -5,6 +5,8 @@ import 'package:sicipe/recipecategory_page.dart';
 import 'package:sicipe/search.dart';
 import 'package:sicipe/transaksi.dart';
 import 'package:sicipe/category_detail.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -232,52 +234,127 @@ class _HomeScreenState extends State<HomeScreen> {
                         title: 'Cemilan',
                         icon: IconButton(
                             icon: Image.asset('assets/icons/Cemilan.png'),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const category_detail()),
-                              );
+                            onPressed: () async {
+                              final response = await http.get(Uri.parse(
+                                  'http://10.0.2.2:8000/api/reseps/Cemilan'));
+                              Map<String, dynamic> decodedData =
+                                  json.decode(response.body);
+                              if (decodedData["data"].toString() == "[]") {
+                                // Data exists, do something
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: Text("Maaf"),
+                                      content: Text("Resep belum tersedia"),
+                                      actions: [],
+                                    );
+                                  },
+                                );
+                              } else {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const category_detail(
+                                              nama: 'Cemilan')),
+                                );
+                              }
                             }),
                       ),
                       ItemKategoriResep(
                         title: 'Ayam',
                         icon: IconButton(
                             icon: Image.asset('assets/icons/Daging Ayam.png'),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const category_detail()),
-                              );
+                            onPressed: () async {
+                              final response = await http.get(Uri.parse(
+                                  'http://10.0.2.2:8000/api/reseps/Daging Ayam'));
+                              Map<String, dynamic> decodedData =
+                                  json.decode(response.body);
+                              if (decodedData["data"].toString() == "[]") {
+                                // Data exists, do something
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: Text("Maaf"),
+                                      content: Text("Resep belum tersedia"),
+                                      actions: [],
+                                    );
+                                  },
+                                );
+                              } else {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const category_detail(
+                                              nama: 'Daging Ayam')),
+                                );
+                              }
                             }),
                       ),
                       ItemKategoriResep(
                         title: 'Eropa',
                         icon: IconButton(
                             icon: Image.asset('assets/icons/Eropa.png'),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const category_detail()),
-                              );
+                            onPressed: () async {
+                              final response = await http.get(Uri.parse(
+                                  'http://10.0.2.2:8000/api/reseps/Eropa'));
+                              Map<String, dynamic> decodedData =
+                                  json.decode(response.body);
+                              if (decodedData["data"].toString() == "[]") {
+                                // Data exists, do something
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: Text("Maaf"),
+                                      content: Text("Resep belum tersedia"),
+                                      actions: [],
+                                    );
+                                  },
+                                );
+                              } else {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const category_detail(nama: 'Eropa')),
+                                );
+                              }
                             }),
                       ),
                       ItemKategoriResep(
                         title: 'Indonesia',
                         icon: IconButton(
                             icon: Image.asset('assets/icons/Indonesia.png'),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const category_detail()),
-                              );
+                            onPressed: () async {
+                              final response = await http.get(Uri.parse(
+                                  'http://10.0.2.2:8000/api/reseps/Indonesia'));
+                              Map<String, dynamic> decodedData =
+                                  json.decode(response.body);
+                              if (decodedData["data"].toString() == "[]") {
+                                // Data exists, do something
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: Text("Maaf"),
+                                      content: Text("Resep belum tersedia"),
+                                      actions: [],
+                                    );
+                                  },
+                                );
+                              } else {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const category_detail(
+                                              nama: 'Indonesia')),
+                                );
+                              }
                             }),
                       ),
                     ],
@@ -290,13 +367,32 @@ class _HomeScreenState extends State<HomeScreen> {
                         icon: IconButton(
                             icon: Image.asset(
                                 'assets/icons/Hidangan Pembuka.png'),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const category_detail()),
-                              );
+                            onPressed: () async {
+                              final response = await http.get(Uri.parse(
+                                  'http://10.0.2.2:8000/api/reseps/Hidangan Pembuka'));
+                              Map<String, dynamic> decodedData =
+                                  json.decode(response.body);
+                              if (decodedData["data"].toString() == "[]") {
+                                // Data exists, do something
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: Text("Maaf"),
+                                      content: Text("Resep belum tersedia"),
+                                      actions: [],
+                                    );
+                                  },
+                                );
+                              } else {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const category_detail(
+                                              nama: 'Hidangan Pembuka')),
+                                );
+                              }
                             }),
                       ),
                       ItemKategoriResep(
@@ -304,13 +400,32 @@ class _HomeScreenState extends State<HomeScreen> {
                         icon: IconButton(
                             icon: Image.asset(
                                 'assets/icons/Hidangan Sampingan.png'),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const category_detail()),
-                              );
+                            onPressed: () async {
+                              final response = await http.get(Uri.parse(
+                                  'http://10.0.2.2:8000/api/reseps/Hidangan Sampingan'));
+                              Map<String, dynamic> decodedData =
+                                  json.decode(response.body);
+                              if (decodedData["data"].toString() == "[]") {
+                                // Data exists, do something
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: Text("Maaf"),
+                                      content: Text("Resep belum tersedia"),
+                                      actions: [],
+                                    );
+                                  },
+                                );
+                              } else {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const category_detail(
+                                              nama: 'Hidangan Sampingan')),
+                                );
+                              }
                             }),
                       ),
                       ItemKategoriResep(
@@ -318,13 +433,32 @@ class _HomeScreenState extends State<HomeScreen> {
                         icon: IconButton(
                             icon:
                                 Image.asset('assets/icons/Hidangan Utama.png'),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const category_detail()),
-                              );
+                            onPressed: () async {
+                              final response = await http.get(Uri.parse(
+                                  'http://10.0.2.2:8000/api/reseps/Hidangan Utama'));
+                              Map<String, dynamic> decodedData =
+                                  json.decode(response.body);
+                              if (decodedData["data"].toString() == "[]") {
+                                // Data exists, do something
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: Text("Maaf"),
+                                      content: Text("Resep belum tersedia"),
+                                      actions: [],
+                                    );
+                                  },
+                                );
+                              } else {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const category_detail(
+                                              nama: 'Hidangan Utama')),
+                                );
+                              }
                             }),
                       ),
                       ItemKategoriResep(
@@ -332,13 +466,32 @@ class _HomeScreenState extends State<HomeScreen> {
                         icon: IconButton(
                             icon: Image.asset(
                                 'assets/icons/Hidangan Penutup.png'),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const category_detail()),
-                              );
+                            onPressed: () async {
+                              final response = await http.get(Uri.parse(
+                                  'http://10.0.2.2:8000/api/reseps/Hidangan Penutup'));
+                              Map<String, dynamic> decodedData =
+                                  json.decode(response.body);
+                              if (decodedData["data"].toString() == "[]") {
+                                // Data exists, do something
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: Text("Maaf"),
+                                      content: Text("Resep belum tersedia"),
+                                      actions: [],
+                                    );
+                                  },
+                                );
+                              } else {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const category_detail(
+                                              nama: 'Hidangan Penutup')),
+                                );
+                              }
                             }),
                       ),
                     ],
