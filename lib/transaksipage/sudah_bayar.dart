@@ -85,7 +85,7 @@ class _SudahBayarState extends State<SudahBayar> {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                const PurchasedRecipesDetailScreen()),
+                                const PurchasedRecipesDetailScreen(id: 1)),
                       );
                     },
                     child: Text(
