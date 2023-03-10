@@ -153,7 +153,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          RecipesDetailScreen()));
+                                          RecipesDetailScreen(id: 2)));
                             },
                             child: Text(
                               'Detail',
