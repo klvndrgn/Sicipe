@@ -1,8 +1,86 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:sicipe/services/withdraw_services.dart';
+import 'package:sicipe/utils/currency.dart';
 
-class WithdrawScreen extends StatelessWidget {
-  const WithdrawScreen({super.key});
+class WithdrawScreen extends StatefulWidget {
+ 
+  @override
+  State<WithdrawScreen> createState() => _WithdrawScreenState();
+  
+}
+
+class _WithdrawScreenState extends State<WithdrawScreen> {
+  String userId = '1';
+  String saldo = '';
+  late String apiResult;
+  bool isLoading = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+  }
+  
+void withdraw(BuildContext context) async {
+  showLoadingIndicator();
+  
+  final apiResult = await WithdrawServices().withdrawProcess(userId: userId, saldo: saldo.replaceAll(".", ""));
+  hideLoadingIndicator();
+  
+  if (apiResult.isNotEmpty || apiResult != null) {
+    showSuccessAlert(context);
+  } else {
+    showSnackbar(context, apiResult['message']);
+  }
+  removeSaldoValue();
+}
+void removeSaldoValue(){
+  setState(() {
+    saldo = '';
+  });
+}
+void showLoadingIndicator() {
+  setState(() {
+    isLoading = true;
+  });
+}
+
+void hideLoadingIndicator() {
+  setState(() {
+    isLoading = false;
+  });
+}
+
+void showSuccessAlert(BuildContext context) {
+  Alert(
+    context: context,
+    type: AlertType.success,
+    title: "Penarikan Saldo Berhasil",
+    desc: "Silahkan Cek Tabungan Anda",
+    buttons: [
+      DialogButton(
+        color: Colors.deepOrange,
+        child: Text(
+          "Selanjutnya",
+          style: TextStyle(color: Colors.white, fontSize: 14),
+        ),
+        onPressed: () => Navigator.pop(context),
+      )
+    ],
+  ).show();
+}
+
+void showSnackbar(BuildContext context, String message) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text(message),
+      duration: Duration(seconds: 3),
+    ),
+  );
+}
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +94,10 @@ class WithdrawScreen extends StatelessWidget {
         backgroundColor: Colors.deepOrange,
       ),
       body: Center(
-        child: Column(
+        child: 
+          isLoading ? CircularProgressIndicator()
+        :
+        Column(
           children: [
             Padding(
               padding: const EdgeInsets.all(20.0),
@@ -87,9 +168,15 @@ class WithdrawScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 20.0),
                   child: TextField(
-                    keyboardType: TextInputType.name,
+                    inputFormatters: [
+                      FilteringTextInputFormatter.digitsOnly, 
+                      new LengthLimitingTextInputFormatter(10),
+                      CurrencyFormat()
+                      ],
+                    keyboardType: TextInputType.number,
                     textAlign: TextAlign.center,
                     textInputAction: TextInputAction.next,
+                    onChanged: (value) => saldo = value,
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Isi Jumlah Penarikan',
@@ -113,7 +200,79 @@ class WithdrawScreen extends StatelessWidget {
                     backgroundColor: Colors.deepOrange,
                   ),
                   onPressed: () {
-                    Navigator.pop(context);
+                    (saldo == null || saldo == "") ? 
+                      ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('Penarikan Saldo Tidak Boleh Kosong'),
+                        duration: Duration(seconds: 3),
+                      ),
+                    )
+                  :
+                    showDialog(
+                      context: context,
+                      builder: (ctx) => AlertDialog(
+                              title: Text('Konfirmasi Penarikan Saldo',
+                                  style: (GoogleFonts.jost(
+                                      color: Colors.deepOrange,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500))),
+                              content: Text(
+                                  "Apakah Benar Anda Ingin Melakukan Penarikan Saldo Sebesar Rp. ${saldo} ?",
+                                  style: (GoogleFonts.jost(
+                                      fontSize: 14))),
+                              actions: <Widget>[
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Container(
+                                      child: ElevatedButton(
+                                        style:
+                                            ElevatedButton.styleFrom(
+                                          minimumSize: Size(113, 37),
+                                          backgroundColor:
+                                              Colors.grey,
+                                        ),
+                                        onPressed: () {
+                                          Navigator.of(ctx).pop();
+                                        },
+                                        child: Text(
+                                          'Tidak',
+                                          style: GoogleFonts.jost(
+                                              color: Colors.white,
+                                              fontSize: 16,
+                                              fontWeight:
+                                                  FontWeight.w500),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      child: ElevatedButton(
+                                        style:
+                                            ElevatedButton.styleFrom(
+                                          minimumSize: Size(113, 37),
+                                          backgroundColor:
+                                              Colors.deepOrange,
+                                        ),
+                                        onPressed: () {
+                                          Navigator.pop(ctx);
+                                          withdraw(context);
+                                        },
+                                        child: Text(
+                                          'Iya',
+                                          style: GoogleFonts.jost(
+                                              color: Colors.white,
+                                              fontSize: 16,
+                                              fontWeight:
+                                                  FontWeight.w500),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ]));
+                    // Navigator.pop(context);
+                    
                   },
                   child: Text(
                     'Tarik Saldo',
@@ -131,3 +290,4 @@ class WithdrawScreen extends StatelessWidget {
     );
   }
 }
+
