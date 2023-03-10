@@ -3,6 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sicipe/bottom_navigation.dart';
 import 'package:sicipe/register_page.dart';
 import 'package:sicipe/forget_password.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:sicipe/model/auth_services.dart';
+import 'package:sicipe/model/globals.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -11,7 +16,45 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  String _email = '';
+  String _password = '';
   bool _obscureText = true;
+
+  loginPressed() async {
+    if (_email.isNotEmpty && _password.isNotEmpty) {
+      http.Response response = await AuthServices.login(_email, _password);
+      Map responseMap = jsonDecode(response.body);
+      if (response.statusCode == 200) {
+        Alert(
+          context: context,
+          type: AlertType.success,
+          title: "Login berhasil",
+          desc: "Selamat anda berhasil login",
+          buttons: [
+            DialogButton(
+              color: Colors.deepOrange,
+              child: Text(
+                "Selanjutnya",
+                style: GoogleFonts.jost(color: Colors.white, fontSize: 14),
+              ),
+              onPressed: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => bottom_navigation()));
+              },
+            )
+          ],
+        ).show();
+        return;
+      } else {
+        errorSnackBar(context, "Email atau password salah");
+      }
+    } else {
+      errorSnackBar(context, 'Email atau password masih kosong');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     SizedBox(width: 10),
                     Text(
-                      'Nama Pengguna',
+                      'Email',
                       style:
                           GoogleFonts.jost(color: Colors.black, fontSize: 20),
                     ),
@@ -56,9 +99,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 20.0),
                       child: TextField(
+                        onChanged: (value) {
+                          _email = value;
+                        },
                         decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintText: 'Masukkan Nama Pengguna',
+                            hintText: 'Masukkan Email',
                             hintStyle: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 15,
@@ -94,6 +140,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 20.0),
                       child: TextField(
+                        onChanged: (value) {
+                          _password = value;
+                        },
                         obscureText: _obscureText,
                         decoration: InputDecoration(
                             border: InputBorder.none,
@@ -131,10 +180,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         backgroundColor: Colors.deepOrange,
                       ),
                       onPressed: () {
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => bottom_navigation()));
+                        loginPressed();
                       },
                       child: Text(
                         'MASUK',
