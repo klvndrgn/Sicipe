@@ -123,7 +123,7 @@ class _profile_sayaState extends State<profile_saya> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const WithdrawScreen()),
+                            builder: (context) => WithdrawScreen()),
                       );
                     },
                     child: Text(
