@@ -208,7 +208,7 @@ class _pembayaranState extends State<pembayaran> {
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
-                                  const PurchasedRecipesDetailScreen()),
+                                  const PurchasedRecipesDetailScreen(id: 1)),
                         );
                       },
                       child: Text(
