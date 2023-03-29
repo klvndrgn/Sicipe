@@ -3,8 +3,10 @@
 A new Flutter project for Mobile Development subject. A mobile apps for selling & buying food recipes
 
 Kelompok TryHard:
-- Eric
+- Eric 2031010
 - Tevin Lim 2031132
 - Felix King Lie
 - Jocelyn
 - Kelvin 2031093
+- Kevin Charles 2031161
+- Handyca Yeng 2031139
