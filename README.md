@@ -5,8 +5,8 @@ A new Flutter project for Mobile Development subject. A mobile apps for selling 
 Kelompok TryHard:
 - Eric 2031010
 - Tevin Lim 2031132
-- Felix King Lie
-- Jocelyn
+- Felix King Lie 2031181
+- Jocelyn 2031013
 - Kelvin 2031093
 - Kevin Charles 2031161
 - Handyca Yeng 2031139
