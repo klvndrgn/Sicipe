@@ -3,18 +3,13 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
+import 'package:sicipe/model/globals.dart';
 
 
 class PaymentServices {
-  // static const String API_TOPUP = "http://127.0.0.1:8000/api/top-up";
-  static const String API_TOPUP = "http://10.0.2.2:8000/api/top-up";
+  static const String API_TOPUP = baseURL + 'top-up';
   final timeout = const Duration(seconds: 10);
   final Uri urlTopUp = Uri.parse(API_TOPUP);
- 
-  final headers = <String, String>{
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
-  };
 
   Future<dynamic> paymentProcess({required String userId, required String saldo}) async {
     final body = jsonEncode({
