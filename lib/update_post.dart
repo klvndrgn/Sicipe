@@ -8,25 +8,44 @@ import 'package:sicipe/services/feed_services.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:image_picker/image_picker.dart';
 
-class CreatePostScreen extends StatefulWidget {
-  const CreatePostScreen({super.key});
+class UpdatePostScreen extends StatefulWidget {
+  final Map feedData;
+  UpdatePostScreen({Key? key, required this.feedData}) : super(key: key);
 
   @override
-  State<CreatePostScreen> createState() => _CreatePostScreenState();
+  _UpdatePostScreenState createState() => _UpdatePostScreenState();
 }
 
-class _CreatePostScreenState extends State<CreatePostScreen> {
+class _UpdatePostScreenState extends State<UpdatePostScreen> {
   List resepData = [];
   File? _image;
   String? _imagePath;
   String? _selectedResep;
+  final directory = getApplicationDocumentsDirectory();
 
   final DeskripsiController = TextEditingController();
-  
+
   @override
   void initState() {
     super.initState();
     fetchDropdownResep();
+    initAsyncState();
+  }
+
+  Future<void> initAsyncState() async {
+    DeskripsiController.text = widget.feedData['deskripsi_feeds'];
+    _selectedResep = widget.feedData['id_resep'].toString();
+    _imagePath = widget.feedData['foto_feeds'];
+
+    if (_imagePath != null) {
+      final directory = await getApplicationDocumentsDirectory();
+      final file = File('${directory.path}/$_imagePath');
+      if (await file.exists()) {
+        setState(() {
+          _image = file;
+        });
+      }
+    }
   }
   
   void fetchDropdownResep() async{
@@ -38,7 +57,6 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
           resepData = responseJson['data'] as List;
         });
         print('Resep : $resepData');
-        // showSnackbar(context, '');
       } else {
         showSnackbar(context, resepDropdown.body['message']);
       }
@@ -52,19 +70,18 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
 
   Future<void> _getImage(ImageSource source) async {
     final pickedFile = await ImagePicker().pickImage(source: source);
-
+    
     if (pickedFile != null) {
       final bytes = await pickedFile.readAsBytes();
       final directory = await getApplicationDocumentsDirectory();
       final imageName = 'my_image' + generateUniqueNumber() + '.png';
-      final file = File('${directory.path}/'+imageName);
+      final file = File('${directory.path}/' + imageName);
       await file.writeAsBytes(bytes);
 
       setState(() {
         _image = file;
         _imagePath = imageName;
       });
-      print(_image);
     }
   }
   Future<void> submitData(BuildContext context) async {
@@ -108,7 +125,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
     }
     DateTime now = DateTime.now();
     final data = {
-      "id_pengguna": 1,
+      "id_pengguna": widget.feedData['id_feeds'],
       "nama_pengguna": 'Sicipe Creator',
       "id_resep": _selectedResep.toString(),
       "deskripsi_feeds": deskripsi.toString(),
@@ -116,13 +133,13 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
       "foto_feeds": _imagePath.toString()
     };
 
-    final response = await FeedServices().postFeed(data: data);
+    final response = await FeedServices().updateFeed(id: widget.feedData['id_feeds'],data: data);
     if (response.statusCode == 200) {
       // The API call was successful, do something with the response
       print('1');
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text("Save successful"),
+          content: Text("Update successful"),
           duration: Duration(seconds: 2),
         ),
       );
@@ -151,7 +168,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
     return Scaffold(
         appBar: AppBar(
             backgroundColor: Colors.deepOrange,
-            title: Text('Buat Postingan',
+            title: Text('Update Postingan',
                 style: GoogleFonts.jost(
                     color: Colors.white,
                     fontSize: 20,
@@ -336,7 +353,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
                         submitData(context);
                       },
                       child: Text(
-                        'Posting',
+                        'Update',
                         style: GoogleFonts.jost(
                             color: Colors.white,
                             fontSize: 20,

@@ -3,18 +3,13 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
+import 'package:sicipe/model/globals.dart';
 
 
 class WithdrawServices {
-  // static const String API_WITHDRAW = "http://127.0.0.1:8000/api/penarikan-saldo";
-  static const String API_WITHDRAW = "http://10.0.2.2:8000/api/penarikan-saldo";
+  static const String API_WITHDRAW = baseURL + 'penarikan-saldo';
   final timeout = const Duration(seconds: 10);
   final Uri urlWithdraw = Uri.parse(API_WITHDRAW);
- 
-  final headers = <String, String>{
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
-  };
 
   Future<dynamic> withdrawProcess({required String userId, required String saldo}) async {
     final body = jsonEncode({
