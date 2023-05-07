@@ -102,7 +102,10 @@ class _profile_sayaState extends State<profile_saya> {
                     child: Row(
                       children: [
                         Image.network(
-                          serverBaseURL + myProfile["photo_profile"],
+                          serverBaseURL +
+                              (myProfile["photo_profile"] != null
+                                  ? myProfile["photo_profile"]
+                                  : ""),
                           width: 48,
                           height: 48,
                           errorBuilder: (BuildContext context, Object exception,
