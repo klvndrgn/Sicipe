@@ -16,10 +16,16 @@ class _transaksiState extends State<transaksi> with TickerProviderStateMixin {
     TabController _tabController = TabController(length: 2, vsync: this);
     return Scaffold(
         appBar: AppBar(
-          title: Text(
-            'Transaksi',
-            style: GoogleFonts.jost(
-                color: Colors.white, fontSize: 20, fontWeight: FontWeight.w500),
+          automaticallyImplyLeading: false,
+          title: Padding(
+            padding: const EdgeInsets.only(left: 10.0),
+            child: Text(
+              'Transaksi',
+              style: GoogleFonts.jost(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500),
+            ),
           ),
           backgroundColor: Colors.deepOrange,
         ),

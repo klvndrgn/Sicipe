@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sicipe/bottom_navigation.dart';
 import 'package:sicipe/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -9,17 +11,26 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  void session() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    String? token = await prefs.getString('token');
+
+    if (token == null) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => LoginScreen()));
+    } else {
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => bottom_navigation()));
+    }
+  }
+
   @override
   void initState() {
     Timer(
         Duration(
           seconds: 3,
         ), () {
-      Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => LoginScreen(),
-          ));
+      session();
     });
     super.initState();
   }

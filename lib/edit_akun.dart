@@ -4,15 +4,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sicipe/detail_akun.dart';
-import 'package:sicipe/login_page.dart';
 import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_file_picker/form_builder_file_picker.dart';
 import 'package:sicipe/model/auth_services.dart';
-import 'package:sicipe/model/globals.dart';
-
 import 'package:sicipe/model/globals.dart';
 
 class edit_akun extends StatefulWidget {
@@ -33,8 +29,6 @@ class _edit_akunState extends State<edit_akun> {
   String _name = "";
   String _initImage = "";
   String? _imagePath;
-  bool _obscureText = true;
-  bool _obscureTexts = true;
 
   TextEditingController _nameInputController = new TextEditingController();
   TextEditingController _dateInputController = new TextEditingController();

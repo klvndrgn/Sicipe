@@ -129,10 +129,13 @@ class _FeedScreenState extends State<FeedScreen> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text(
-          'Feeds',
-          style: GoogleFonts.jost(
-              color: Colors.white, fontSize: 20, fontWeight: FontWeight.w500),
+        title: Padding(
+          padding: const EdgeInsets.only(left: 10.0),
+          child: Text(
+            'Feeds',
+            style: GoogleFonts.jost(
+                color: Colors.white, fontSize: 20, fontWeight: FontWeight.w500),
+          ),
         ),
         backgroundColor: Colors.deepOrange,
       ),
@@ -214,8 +217,7 @@ class _FeedScreenState extends State<FeedScreen> {
                                           color: Colors.black, fontSize: 14),
                                     ),
                                     subtitle: Text(
-                                      formatDateTime(
-                                          dateTime ?? new DateTime.now()),
+                                      formatDateTime(new DateTime.now()),
                                       style: GoogleFonts.jost(
                                           color: Colors.grey.shade400,
                                           fontSize: 10),
@@ -245,11 +247,13 @@ class _FeedScreenState extends State<FeedScreen> {
                                                   builder: (context) =>
                                                       UpdatePostScreen(
                                                         feedData: {
-                                                          "id_feeds" : idFeed,
-                                                          "id_resep" : idResep,
-                                                          "id_pengguna" : idPengguna,
-                                                          "deskripsi_feeds" : deskripsi,
-                                                          "foto_feeds" : fotoFeed
+                                                          "id_feeds": idFeed,
+                                                          "id_resep": idResep,
+                                                          "id_pengguna":
+                                                              idPengguna,
+                                                          "deskripsi_feeds":
+                                                              deskripsi,
+                                                          "foto_feeds": fotoFeed
                                                         },
                                                       )));
                                         } else if (value == 'delete') {

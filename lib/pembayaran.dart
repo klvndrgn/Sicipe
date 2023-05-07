@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sicipe/ganti_nomor_rekening.dart';
 import 'package:sicipe/purchased_recipes_detail.dart';
 
 class pembayaran extends StatefulWidget {

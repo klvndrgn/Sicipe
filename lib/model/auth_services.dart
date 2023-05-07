@@ -1,8 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
-
-import 'package:form_builder_file_picker/form_builder_file_picker.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sicipe/model/globals.dart';
 import 'package:http/http.dart' as http;
 
@@ -23,14 +19,10 @@ class AuthServices {
       headers: headers,
       body: body,
     );
-
-    print(response.body);
     return response;
   }
 
   static Future<http.Response> login(String email, String password) async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-
     Map data = {"alamat_email": email, "kata_sandi": password};
     var body = json.encode(data);
     var url = Uri.parse(baseURL + 'auth/login');
@@ -39,9 +31,6 @@ class AuthServices {
       headers: headers,
       body: body,
     );
-    var token = json.decode(response.body)["token"];
-
-    await prefs.setString('token', token);
 
     return response;
   }

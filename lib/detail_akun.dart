@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sicipe/edit_akun.dart';
 import 'package:sicipe/login_page.dart';
-
 import 'package:sicipe/model/globals.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class detail_akun extends StatefulWidget {
   final dynamic myProfile;
@@ -16,12 +16,23 @@ class detail_akun extends StatefulWidget {
 
 class _detail_akunState extends State<detail_akun> {
   var myProfile;
+  bool isLoading = false;
 
   @override
   void initState() {
     super.initState();
 
     myProfile = widget.myProfile;
+  }
+
+  void logout() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.clear();
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => LoginScreen(),
+      ),
+    );
   }
 
   @override
@@ -258,11 +269,7 @@ class _detail_akunState extends State<detail_akun> {
                                       backgroundColor: Colors.deepOrange,
                                     ),
                                     onPressed: () {
-                                      Navigator.pushReplacement(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  LoginScreen()));
+                                      logout();
                                     },
                                     child: Text(
                                       'Iya',

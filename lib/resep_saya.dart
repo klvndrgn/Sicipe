@@ -6,7 +6,6 @@ import 'package:sicipe/create_recipe.dart';
 import 'package:sicipe/purchased_recipes_detail.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:intl/intl.dart';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 

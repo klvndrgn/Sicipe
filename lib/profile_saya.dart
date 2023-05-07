@@ -10,7 +10,6 @@ import 'package:sicipe/keamanan_akun.dart';
 import 'package:sicipe/payment.dart';
 import 'package:sicipe/withdrawal.dart';
 import 'dart:convert';
-
 import 'package:sicipe/model/globals.dart';
 
 class profile_saya extends StatefulWidget {
@@ -74,6 +73,7 @@ class _profile_sayaState extends State<profile_saya> {
           )
         : Scaffold(
             appBar: AppBar(
+              automaticallyImplyLeading: false,
               backgroundColor: Colors.deepOrange,
               title: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),

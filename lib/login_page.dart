@@ -8,6 +8,7 @@ import 'dart:convert';
 import 'package:sicipe/model/auth_services.dart';
 import 'package:sicipe/model/globals.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -23,8 +24,10 @@ class _LoginScreenState extends State<LoginScreen> {
   loginPressed() async {
     if (_email.isNotEmpty && _password.isNotEmpty) {
       http.Response response = await AuthServices.login(_email, _password);
-      Map responseMap = jsonDecode(response.body);
       if (response.statusCode == 200) {
+        final SharedPreferences prefs = await SharedPreferences.getInstance();
+        var token = json.decode(response.body)["token"];
+        await prefs.setString('token', token);
         Alert(
           context: context,
           type: AlertType.success,
