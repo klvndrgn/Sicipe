@@ -42,7 +42,11 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                   ItemKategoriResep(
                     title: 'Korea',
                     icon: IconButton(
-                        icon: Image.asset('assets/icons/Korea.png'),
+                        icon: Image.asset(
+                          'assets/icons/Korea.png',
+                        ),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Korea'));
@@ -70,10 +74,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Jepang',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Jepang.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Jepang'));
@@ -101,10 +108,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Eropa',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Eropa.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Eropa'));
@@ -132,10 +142,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Indonesia',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Indonesia.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Indonesia'));
@@ -175,6 +188,8 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                     title: 'Thailand',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Thailand.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Thailand'));
@@ -202,10 +217,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'India',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/India.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/India'));
@@ -233,10 +251,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Vietnam',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Vietnam.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Vietnam'));
@@ -264,10 +285,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Hongkong',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Hongkong.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Hongkong'));
@@ -307,6 +331,8 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                     title: 'Hidangan Pembuka',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Hidangan Pembuka.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Hidangan Pembuka'));
@@ -334,11 +360,14 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Hidangan Sampingan',
                     icon: IconButton(
                         icon:
                             Image.asset('assets/icons/Hidangan Sampingan.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Hidangan Sampingan'));
@@ -366,10 +395,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Hidangan Utama',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Hidangan Utama.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Hidangan Utama'));
@@ -397,10 +429,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Hidangan Penutup',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Hidangan Penutup.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Hidangan Penutup'));
@@ -440,6 +475,8 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                     title: 'Ayam',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Daging Ayam.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Daging Ayam'));
@@ -467,10 +504,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Sapi',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Sapi.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Sapi'));
@@ -498,10 +538,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Seafood',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Seafood.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Seafood'));
@@ -529,10 +572,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Telur',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Telur.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Telur'));
@@ -572,6 +618,8 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                     title: 'Roti',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Roti.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Roti'));
@@ -599,10 +647,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Sarapan',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Sarapan.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Sarapan'));
@@ -630,10 +681,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Saus',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Saus.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Saus'));
@@ -661,10 +715,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Mie',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Mie.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(
                               Uri.parse('http://10.0.2.2:8000/api/reseps/Mie'));
@@ -704,6 +761,8 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                     title: 'Pedas',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Pedas.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Pedas'));
@@ -731,10 +790,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Vegetarian',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Vegetarian.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Vegetarian'));
@@ -762,10 +824,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Sayur',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Sayur.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Sayur'));
@@ -793,10 +858,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Sup',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Sup.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(
                               Uri.parse('http://10.0.2.2:8000/api/reseps/Sup'));
@@ -836,6 +904,8 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                     title: 'Kue Basah',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Kue Basah.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Kue Basah'));
@@ -863,10 +933,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Kue Kering',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Kue Kering.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Kue Kering'));
@@ -894,10 +967,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Makanan Anak',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Makanan Anak.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Makanan Anak'));
@@ -925,10 +1001,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Makanan Diet',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Makanan Diet.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Makanan Diet'));
@@ -968,6 +1047,8 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                     title: 'Cemilan',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Manisan.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Cemilan'));
@@ -995,10 +1076,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Minuman',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Minuman.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Minuman'));
@@ -1026,10 +1110,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                     title: 'Pasta',
                     icon: IconButton(
                         icon: Image.asset('assets/icons/Pasta.png'),
+                        iconSize: 40, // Increase the icon size
+                        padding: EdgeInsets.zero,
                         onPressed: () async {
                           final response = await http.get(Uri.parse(
                               'http://10.0.2.2:8000/api/reseps/Pasta'));
@@ -1057,10 +1144,13 @@ class _RecipeCategoryState extends State<RecipeCategory> {
                           }
                         }),
                   ),
+                  SizedBox(width: 10),
                   ItemKategoriResep(
                       title: 'Makanan Pesta',
                       icon: IconButton(
                           icon: Image.asset('assets/icons/Makanan Pesta.png'),
+                          iconSize: 40, // Increase the icon size
+                          padding: EdgeInsets.zero,
                           onPressed: () async {
                             final response = await http.get(Uri.parse(
                                 'http://10.0.2.2:8000/api/reseps/Makanan Pesta'));

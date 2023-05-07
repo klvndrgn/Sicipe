@@ -8,6 +8,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
+import 'package:sicipe/resep_saya_edit.dart';
 
 class resep_saya extends StatefulWidget {
   const resep_saya({super.key});
@@ -60,12 +61,38 @@ class _resep_sayaState extends State<resep_saya> {
       setState(() {
         // Reload the page by updating the state
         _data.removeWhere((resep) => resep["id_resep"] == id);
+        if (_data.isEmpty) {
+          dataEmpty = "True";
+        } else {
+          dataEmpty = "";
+        }
       });
     } else if (response.statusCode == 404) {
       // The resep was not found
       print('Resep tidak ditemukan');
     } else {
       // There was an error while deleting the resep
+      print('Terjadi kesalahan: ${response.reasonPhrase}');
+    }
+  }
+
+  Future<void> editResep(int id, Map<String, dynamic> resepData) async {
+    final url =
+        'http://10.0.2.2:8000/api/resep/$id'; // replace with your actual API endpoint
+    final response = await http.put(Uri.parse(url), body: resepData);
+
+    if (response.statusCode == 200) {
+      // The edit operation was successful
+      print('Resep berhasil diubah');
+      setState(() {
+        // Reload the page by updating the state
+        _data[_data.indexWhere((resep) => resep["id_resep"] == id)] = resepData;
+      });
+    } else if (response.statusCode == 404) {
+      // The resep was not found
+      print('Resep tidak ditemukan');
+    } else {
+      // There was an error while editing the resep
       print('Terjadi kesalahan: ${response.reasonPhrase}');
     }
   }
@@ -692,7 +719,7 @@ class _resep_sayaState extends State<resep_saya> {
                                     ],
                                   ),
                                 ),
-                                SizedBox(width: 22),
+                                // SizedBox(width: 22),
                                 Padding(
                                   padding: EdgeInsets.symmetric(vertical: 5),
                                   child: Column(
@@ -741,6 +768,22 @@ class _resep_sayaState extends State<resep_saya> {
                                             },
                                             icon: Icon(
                                               Icons.delete,
+                                              color: Colors.deepOrange,
+                                            ),
+                                          ),
+                                          IconButton(
+                                            onPressed: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        edit_resep(
+                                                            id: _data[index]
+                                                                ["id_resep"])),
+                                              );
+                                            },
+                                            icon: Icon(
+                                              Icons.edit,
                                               color: Colors.deepOrange,
                                             ),
                                           ),

@@ -57,7 +57,7 @@ class _tambah_resepState extends State<tambah_resep> {
     'Mid': 'Mid',
     'Hard': 'Hard',
   };
-
+  List<String> _selectedCategories = [];
   String? _selectedCategory;
   String? _selectedLevel;
 
@@ -133,11 +133,11 @@ class _tambah_resepState extends State<tambah_resep> {
       emptyFields.add('Foto Makanan');
     }
 
-    if (_selectedCategory == null || _selectedCategory == "") {
+    if (_selectedCategories == "") {
       emptyFields.add('Kategori Resep');
     }
 
-    if (kalori.isEmpty) {
+    if (nama.isEmpty) {
       emptyFields.add('Nama Resep');
     }
 
@@ -201,7 +201,7 @@ class _tambah_resepState extends State<tambah_resep> {
     final data = {
       "id_pengguna": 1,
       "id_kategori_resep": 1,
-      "nama_kategori_resep": _selectedCategory.toString(),
+      "nama_kategori_resep": _selectedCategories.toString(),
       "nama_resep": nama.toString(),
       "harga_resep": int.parse(harga),
       "bahan_dan_alat": bahan.toString(),
@@ -258,7 +258,6 @@ class _tambah_resepState extends State<tambah_resep> {
                 Navigator.pop(context);
               },
             )),
-        resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 30),
@@ -339,29 +338,57 @@ class _tambah_resepState extends State<tambah_resep> {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.only(left: 20.0),
-                      child: DropdownButton<String>(
-                        value: _selectedCategory,
-                        onChanged: (String? newValue) {
-                          setState(() {
-                            _selectedCategory = newValue;
-                          });
-                        },
-                        items: _categories.entries.map((category) {
-                          return DropdownMenuItem<String>(
-                            value: category.value,
-                            child: Text(category.key),
-                          );
-                        }).toList(),
-                        hint: Text(
-                          'Pilih Kategori',
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 15,
-                            fontFamily: '',
+                      child: Row(
+                        children: [
+                          Text(
+                            _selectedCategories.isNotEmpty
+                                ? ''
+                                : 'Pilih Kategori Resep', // Replace with your desired hint text
+                            style: TextStyle(
+                              color: Colors.grey, // Set the color of hint text
+                            ),
                           ),
-                        ),
-                        isExpanded: true,
-                        underline: Container(),
+                          Expanded(
+                            child: Wrap(
+                              children:
+                                  _selectedCategories.map((selectedCategory) {
+                                return Padding(
+                                  padding: EdgeInsets.only(right: 8.0),
+                                  child: Chip(
+                                    label: Text(selectedCategory),
+                                    onDeleted: () {
+                                      setState(() {
+                                        _selectedCategories
+                                            .remove(selectedCategory);
+                                      });
+                                    },
+                                  ),
+                                );
+                              }).toList(),
+                            ),
+                          ),
+                          PopupMenuButton<String>(
+                            icon: Icon(Icons.arrow_drop_down),
+                            itemBuilder: (BuildContext context) {
+                              return _categories.entries.map((category) {
+                                return PopupMenuItem<String>(
+                                  value: category.value,
+                                  child: Text(category.key),
+                                );
+                              }).toList();
+                            },
+                            onSelected: (String? selectedValue) {
+                              setState(() {
+                                if (selectedValue != null) {
+                                  if (!_selectedCategories
+                                      .contains(selectedValue)) {
+                                    _selectedCategories.add(selectedValue);
+                                  }
+                                }
+                              });
+                            },
+                          ),
+                        ],
                       ),
                     ),
                   ),
